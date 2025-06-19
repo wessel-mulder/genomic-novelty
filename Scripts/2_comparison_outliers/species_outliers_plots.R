@@ -7,10 +7,7 @@ library(deeptime)
 library(phangorn)
 library(svglite)
 
-# library(systemfonts)
-# library(extrafont)
-
-setwd("/Users/jule/Desktop/turtle-jeans")
+setwd("/Users/jule/Desktop/genomic-novelty/")
 
 colours_classes <- fish(n=1,option="Balistoides_conspicillum", end=0.9, 
                         begin=0.9)
@@ -21,27 +18,18 @@ colours_classes[3] <- fish(n=1,option="Balistoides_conspicillum", end=0.4,
 colours_classes[4] <- fish(n=1,option="Balistoides_conspicillum", end=0.2, 
                            begin=0.2)
 
-gene_names <- readLines("Scripts/dN_dS/list_final.txt")
+gene_names <- readLines("Results/0_preprocessing/list_final.txt")
 
-# outliers_dn <- read.csv("Results/outliers_genes_dn_q95.csv")
-# colnames(outliers_dn) <- c("n", "gene")
-# outliers_ds <- read.csv("Results/outliers_genes_ds_q95.csv")
-# colnames(outliers_ds) <- c("n", "gene")
-# outliers_dnds <- read.csv("Results/outliers_genes_dnds_q95.csv")
-# colnames(outliers_dnds) <- c("n", "gene")
-# outliers_pure <- read.csv("Results/outliers_genes_pure_q95.csv")
-# colnames(outliers_pure) <- c("n", "gene")
-
-outliers_dn_species <- read.csv("Results/outliers_species_dn_q95.csv")
+outliers_dn_species <- read.csv("Results/outliers_species/dn_chi95.csv")
 colnames(outliers_dn_species) <- c("n", "species", "gene")
-outliers_ds_species <- read.csv("Results/outliers_species_ds_q95.csv")
+outliers_ds_species <- read.csv("Results/outliers_species/ds_chi95.csv")
 colnames(outliers_ds_species) <- c("n", "species", "gene")
-outliers_dnds_species <- read.csv("Results/outliers_species_dnds_q95.csv")
+outliers_dnds_species <- read.csv("Results/outliers_species/dnds_chi95.csv")
 colnames(outliers_dnds_species) <- c("n", "species", "gene")
-outliers_pure_species <- read.csv("Results/outliers_species_pure_q95.csv")
+outliers_pure_species <- read.csv("Results/outliers_species/pure_chi95.csv")
 colnames(outliers_pure_species) <- c("n", "species", "gene")
 
-meta_turtles <- read_tsv("Data/metadata_habitat_reptraits.tsv")
+meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat_reptraits.tsv")
 meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
                                       levels=c("Marine", "Aquatic", 
                                                "Aquatic_Terrestrial", "Terrestrial", 
@@ -53,19 +41,8 @@ meta_turtles <- meta_turtles %>% filter(Microhabitat != "Outgroup")
 ### SPECIES TREE PLOT ###
 #########################
 
-# colours_classes5 <- fish(n=5,option="Balistoides_conspicillum", end=0.95, 
-#                          begin=0.3,direction=-1)
-# colours_classes4 <- colours_classes5[1:4]
-# 
-# c("#0F3D5CFF", "#4C98B8FF", "#7EA77DFF", "#9DB327FF", "#DEE100FF")
-# 
-# colour_marine <- colours_classes4[1]
-# colour_aquatic <- colours_classes4[2]
-# colour_aquatic_terrestrial <- colours_classes4[3]
-# colour_terrestrial <- colours_classes4[4]
-
 # load species tree with branch lengths from Thomson et al. (2021)
-species_tree_plot <- read.nexus("Data/bd.mcc.median_heights.tre")
+species_tree_plot <- read.nexus("Data/2_comparison_outliers/bd.mcc.median_heights.tre")
 species_tree_plot <- drop.tip(species_tree_plot, 
                               setdiff(species_tree_plot$tip.label, meta_turtles$ID))
 species_tree_plot$tip.label <- meta_turtles$Species[
@@ -89,19 +66,18 @@ plot_tree <- plot_tree +
         text = element_text(family = "Arial"))
 revts(plot_tree)
 
-svglite('Results/species_tree_branch_lengths.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/species_tree_branch_lengths.svg', width = 8, height = 5)
 revts(plot_tree)
 dev.off()
 
-ggsave("Results/species_tree_branch_lengths.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/species_tree_branch_lengths.pdf", width = 8, height = 5)
 
 
 ###############################
 ### OVERLAP BETWEEN SPECIES ###
 ###############################
 
-species_list <- meta_turtles %>% filter(Microhabitat != "Outgroup")
-species_list <- species_list$ID
+species_list <- meta_turtles$ID
 
 df_species_id <- meta_turtles %>% dplyr::select(c("Species", "ID"))
 
@@ -168,12 +144,12 @@ heatmap_dn <- ggplot(df_heatmap_dn, aes(x = Species1, y = Species2, fill = value
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, face = 'italic')) +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/heatmap_dn.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/heatmap_dn.svg', width = 8, height = 5)
 print(heatmap_dn)
 dev.off()
 
 heatmap_dn
-ggsave("Results/heatmap_dn.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/heatmap_dn.pdf", width = 8, height = 5)
 
 
 # DS
@@ -220,12 +196,12 @@ heatmap_ds <- ggplot(df_heatmap_ds, aes(x = Species1, y = Species2, fill = value
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, face = 'italic')) +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/heatmap_ds.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/heatmap_ds.svg', width = 8, height = 5)
 print(heatmap_ds)
 dev.off()
 
 heatmap_ds
-ggsave("Results/heatmap_ds.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/heatmap_ds.pdf", width = 8, height = 5)
 
 
 # DNDS RELATIVE
@@ -276,12 +252,12 @@ heatmap_dnds <- ggplot(df_heatmap_dnds, aes(x = Species1, y = Species2, fill = v
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, face = 'italic')) +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/heatmap_dnds_relative.svg', width = 12, height = 7.5)
+svglite('Plots/2_comparison_outliers/heatmap_dnds_relative.svg', width = 12, height = 7.5)
 print(heatmap_dnds)
 dev.off()
 
 heatmap_dnds
-ggsave("Results/heatmap_dnds_relative.pdf", width = 16, height = 10)
+ggsave("Plots/2_comparison_outliers/heatmap_dnds_relative.pdf", width = 16, height = 10)
 
 # DNDS
 data_heatmap_dnds <- outliers_dnds_species %>% dplyr::select(c("species", "gene"))
@@ -331,12 +307,12 @@ heatmap_dnds <- ggplot(df_heatmap_dnds, aes(x = Species1, y = Species2, fill = v
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, face = 'italic')) +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/heatmap_dnds.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/heatmap_dnds.svg', width = 8, height = 5)
 print(heatmap_dnds)
 dev.off()
 
 heatmap_dnds
-ggsave("Results/heatmap_dnds.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/heatmap_dnds.pdf", width = 8, height = 5)
 
 # PURE
 data_heatmap_pure <- outliers_pure_species %>% dplyr::select(c("species", "gene"))
@@ -383,12 +359,12 @@ heatmap_pure <- ggplot(df_heatmap_pure, aes(x = Species1, y = Species2, fill = v
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, face = 'italic')) +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/heatmap_pure.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/heatmap_pure.svg', width = 8, height = 5)
 print(heatmap_pure)
 dev.off()
 
 heatmap_pure
-ggsave("Results/heatmap_pure.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/heatmap_pure.pdf", width = 8, height = 5)
 
 clust_pure <- hclust(dist(matrix_heatmap_pure))
 plot(clust_pure)
@@ -426,12 +402,12 @@ dotplot_tips_divtimes_overlaps <- ggplot(df_div_times,
        y = "Number of overlapping genes") +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/dotplot_tips_divtimes_overlaps.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/dotplot_tips_divtimes_overlaps.svg', width = 8, height = 5)
 print(dotplot_tips_divtimes_overlaps)
 dev.off()
 
 dotplot_tips_divtimes_overlaps
-ggsave("Results/dotplot_tips_divtimes_overlaps.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/dotplot_tips_divtimes_overlaps.pdf", width = 8, height = 5)
 
 
 ### INTERNAL NODES
@@ -495,59 +471,10 @@ dotplot_internal_divtimes_overlaps <- ggplot(data_plot,
        x = "Divergence time") +
   theme(text = element_text(family = "Arial"))
 
-svglite('Results/dotplot_internal_divtimes_overlaps.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/dotplot_internal_divtimes_overlaps.svg', width = 8, height = 5)
 print(dotplot_internal_divtimes_overlaps)
 dev.off()
 
 dotplot_internal_divtimes_overlaps
-ggsave("Results/dotplot_internal_divtimes_overlaps.pdf", width = 8, height = 5)
+ggsave("Plots/2_comparison_outliers/dotplot_internal_divtimes_overlaps.pdf", width = 8, height = 5)
 
-
-### BUSCO + N50 quality check
-
-stats <- read_tsv('../../Downloads/Assembly_stats.tsv')
-stats$`BUSCO S` <- stats$`BUSCO S` * 100
-
-# plot for our tree
-plot_tree <- ggtree::ggtree(species_tree_plot) + ggtree::xlim_tree(450)
-plot_tree <- plot_tree +
-  ggtree::geom_tiplab(size=5, offset=4, fontface = "italic") + 
-  theme_tree2() +
-  vexpand(0.01, direction = -1)
-plot_tree
-
-facet_stats <- facet_plot(plot_tree,
-                          data=stats,
-                          geom=geom_bar,
-                          mapping = aes(x=`Assembly length (Gb)`, fill=`Assembly length (Gb)`),
-                          stat="identity",
-                          orientation='y',
-                          panel="Assembly length (Gb)",
-                          position = position_stack(reverse = TRUE),
-                          show.legend = F)
-
-facet_stats <- facet_plot(facet_stats,
-                          data=stats,
-                          geom=geom_bar,
-                          mapping = aes(x=`Scaffold N50 (Mb)`, fill=`Scaffold N50 (Mb)`),
-                          stat="identity",
-                          orientation='y',
-                          panel="Scaffold N50 (Mb)",
-                          position = position_stack(reverse = TRUE),
-                          show.legend = F)
-
-facet_stats <- facet_plot(facet_stats,
-                          data=stats,
-                          geom=geom_bar,
-                          mapping = aes(x=`BUSCO S`, fill=`BUSCO S`),
-                          stat="identity",
-                          orientation='y',
-                          panel="BUSCO S",
-                          position = position_stack(reverse = TRUE),
-                          show.legend = F) +
-  xlim_tree(240)
-
-facet_stats
-
-ggsave("Results/assembly_stats.pdf", width = 20, height = 9)
-ggsave("Results/assembly_stats.png", width = 20, height = 9)

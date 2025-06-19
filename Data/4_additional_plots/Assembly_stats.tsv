@@ -1,0 +1,19 @@
+Species	ID	Assembly length (Gb)	Scaffold N50 (Mb)	Assembly Level	Contig N50	Scaffold N50	Number of Scaffolds	BUSCO S
+Podocnemis expansa	podExp	2.40	37.10	Scaffold	134824	37101370	43498	0.92
+Pelusios castaneus	pelCas	2.00	14.10	Scaffold	74864	14055032	69036	0.92
+Mesoclemmys tuberculata	mesTub	2.00	46.40	Scaffold	146430	46415247	53667	0.89
+Emydura subglobosa	emySub	2.00	44.80	Scaffold	350989	44759016	43399	0.92
+Dermatemys mawii	derMaw	1.90	34.40	Scaffold	183958	34365009	40852	0.93
+Chelydra serpentina	cheSer	2.50	21.00	Scaffold	80593	21135443	113431	0.82
+Dermochelys coriacea	derCor	2.10	0.12	Scaffold	45261	120030	56317	0.79
+Chelonia mydas	cheMyd	2.20	3.90	Scaffold	29240	3864108	140022	0.91
+Platysternon megacephalum	plaMeg	2.30	7.20	Scaffold	213602	7221511	359693	0.91
+Terrapene mexicana	terMex	2.60	24.20	Scaffold	76614	24249581	52260	0.81
+Malaclemys terrapin	malTer	2.40	0.44	Contig	437266			0.86
+Chrysemys picta	chrPic	2.40	16.00	Scaffold				0.93
+Cuora mccordi	cuoMcc	2.40	32.60	Scaffold	74338	32628679	100020	0.89
+Cuora amboinensis	cuoAmb	2.10	0.25	Scaffold	47152	247606	89628	NA
+Gopherus agassizii	gopAga	2.20	0.23	Scaffold	43735	228109	172559	0.87
+Chelonoidis abingdonii	cheAbi	2.30	1.30	Scaffold	73186	1277207	10618	0.91
+Pelodiscus sinensis	pelSin	2.20	3.40	Scaffold	21993	3350749	19903	0.87
+Carettochelys insculpta	carIns	2.30	45.90	Scaffold	116202	45881824	48450	0.84
