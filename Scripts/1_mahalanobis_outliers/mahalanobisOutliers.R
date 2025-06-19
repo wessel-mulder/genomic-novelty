@@ -171,7 +171,7 @@ pure_outliers <- detect_outliers_and_extract_quantiles(pure_impute, pure_log, qu
 # Your results
 outlier_obs <- list(
   dfs = list(dNdS_outliers, dN_outliers, dS_outliers, pure_outliers),
-  names = c('dnds', 'dn', 'ds', 'pure')  # no need for list()
+  names = c('dnds', 'dn', 'ds', 'raw')  # no need for list()
 )
 
 df <- dNdS_outliers
@@ -182,13 +182,13 @@ Map(function(df, name) {
       gene = df$indices,
       pval = df$pchisq_all[df$indices]
     )
-    write.csv(outlier_indices, file.path(output,'outliers_genes',paste0('outliers_',name, '_q95.csv')), row.names = FALSE)
+    write.csv(outlier_indices, file.path(output,'outliers_genes',paste0(name, '_q95.csv')), row.names = FALSE)
     all_indices <- data.frame(
       gene = names(df$distances_all),
       distance = df$distances_all,
       pval = df$pchisq_all[names(df$distances_all)]
     )
-    write.csv(all_indices,file.path(output,'distances_allgenes',paste0('distances_',name,'.csv')), row.names = FALSE)
+    write.csv(all_indices,file.path(output,'distances_allgenes',paste0(name,'.csv')), row.names = FALSE)
   }
 }, outlier_obs$dfs, outlier_obs$names)
 
@@ -253,5 +253,5 @@ write.csv(df,file.path(output,'outliers_species','ds_chi95.csv'))
 text <- pure_outliers_species$indices
 split <- strsplit(text,'_')
 df <- do.call(rbind, lapply(split, function(x) data.frame(Gene = x[1], Species = x[2])))
-write.csv(df,file.path(output,'outliers_species','pure_chi95.csv'))
+write.csv(df,file.path(output,'outliers_species','raw_chi95.csv'))
 
