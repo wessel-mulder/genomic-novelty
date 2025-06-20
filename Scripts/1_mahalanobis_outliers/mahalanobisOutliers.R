@@ -179,12 +179,12 @@ df <- dNdS_outliers
 Map(function(df, name) {
   if (!is.null(df$indices)) {
     outlier_indices <- data.frame(
-      gene = df$indices,
+      busco_id = df$indices,
       pval = df$pchisq_all[df$indices]
     )
     write.csv(outlier_indices, file.path(output,'outliers_genes',paste0(name, '_q95.csv')), row.names = FALSE)
     all_indices <- data.frame(
-      gene = names(df$distances_all),
+      busco_id = names(df$distances_all),
       distance = df$distances_all,
       pval = df$pchisq_all[names(df$distances_all)]
     )
