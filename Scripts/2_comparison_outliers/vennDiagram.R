@@ -2,23 +2,7 @@ library(ggvenn)
 library(fishualize)
 library(svglite)
 
-# library(showtext)
-# font_add(family = "Arial", regular = "/System/Library/Fonts/Supplemental/Arial.ttf")
-# showtext_auto()
-
-library(systemfonts)
-# register_font(
-#   name = "Arial",
-#   plain = "/System/Library/Fonts/Supplemental/Arial.ttf"
-# )
-
-library(extrafont)
-# font_import(paths = "/System/Library/Fonts/Supplemental", prompt = FALSE)
-# loadfonts(device = "pdf")
-
-
-
-setwd("/Users/jule/Desktop/turtle-jeans")
+setwd("/Users/jule/Desktop/genomic-novelty/")
 
 colours_classes5 <- fish(n=5,option="Balistoides_conspicillum", end=0.95, 
                          begin=0.3,direction=-1)
@@ -34,13 +18,13 @@ c("#0F3D5CFF", "#4C98B8FF", "#9DB327FF", "#DEE100FF")
 c("#17638DFF", "#4694B8FF", "#9DB327FF", "#DEE100FF")
 
 # genes
-gene_dnds <- read.csv('Results/outliers_genes_dnds_q95.csv',
+gene_dnds <- read.csv('Results/1_mahalanobis_outliers/outliers_genes/dnds_q95.csv',
                       col.names = c('n', 'gene'))
-gene_dn <- read.csv('Results/outliers_genes_dn_q95.csv',
+gene_dn <- read.csv('Results/1_mahalanobis_outliers/outliers_genes/dn_q95.csv',
                     col.names = c('n', 'gene'))
-gene_ds <- read.csv('Results/outliers_genes_ds_q95.csv',
+gene_ds <- read.csv('Results/1_mahalanobis_outliers/outliers_genes/ds_q95.csv',
                     col.names = c('n', 'gene'))
-gene_pairwise_dists <- read.csv('Results/outliers_genes_pure_q95.csv',
+gene_pairwise_dists <- read.csv('Results/1_mahalanobis_outliers/outliers_genes/raw_q95.csv',
                                 col.names = c('n', 'gene'))
 
 # create labels
@@ -75,28 +59,24 @@ venn_gene <- venn_gene + theme(text = element_text(family = "Arial"),
   coord_cartesian(clip = "off")
 venn_gene
 
-svglite('Results/venn_outliergenes.svg', width = 11, height = 8)
+svglite('Plots/2_comparison_outliers/venn_outliergenes.svg', width = 11, height = 8)
 print(venn_gene)
 dev.off()
 
-ggsave('Results/venn_outliergenes.pdf',
-       width = 11,
-       height = 8)
-
-ggsave('Results/venn_outliergenes.png',
+ggsave('Plots/2_comparison_outliers/venn_outliergenes.pdf',
        width = 11,
        height = 8)
 
 
 ### REPEAT WITH SPECIES
 # genes
-species_dnds <- read.csv('Results/outliers_species_dnds_q95.csv',
+species_dnds <- read.csv('Results/1_mahalanobis_outliers/outliers_species/dnds_chi95.csv',
                          col.names = c('n', 'species', 'gene'))
-species_dn <- read.csv('Results/outliers_species_dn_q95.csv',
+species_dn <- read.csv('Results/1_mahalanobis_outliers/outliers_species/dn_chi95.csv',
                        col.names = c('n', 'species', 'gene'))
-species_ds <- read.csv('Results/outliers_species_ds_q95.csv',
+species_ds <- read.csv('Results/1_mahalanobis_outliers/outliers_species/ds_chi95.csv',
                        col.names = c('n', 'species', 'gene'))
-species_pairwise_dists <- read.csv('Results/outliers_species_pure_q95.csv',
+species_pairwise_dists <- read.csv('Results/1_mahalanobis_outliers/outliers_species/raw_chi95.csv',
                                    col.names = c('n', 'species', 'gene'))
 
 # create labels
@@ -131,15 +111,11 @@ venn_species <- venn_species +
   coord_cartesian(clip = "off")
 venn_species
 
-svglite('Results/venn_outlierspecies.svg', width = 11, height = 8)
+svglite('Plots/2_comparison_outliers/venn_outlierspecies.svg', width = 11, height = 8)
 print(venn_species)
 dev.off()
 
-ggsave('Results/venn_outlierspecies.pdf',last_plot(),
-       width = 11,
-       height = 8)
-
-ggsave('Results/venn_outlierspecies.png',last_plot(),
+ggsave('Plots/2_comparison_outliers/venn_outlierspecies.pdf',last_plot(),
        width = 11,
        height = 8)
 

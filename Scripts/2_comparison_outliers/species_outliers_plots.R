@@ -7,6 +7,11 @@ library(deeptime)
 library(phangorn)
 library(svglite)
 
+library(extrafont)
+# import arial (only needed once)
+# font_import(pattern = "Arial", prompt = FALSE)
+loadfonts(device = "pdf")
+
 setwd("/Users/jule/Desktop/genomic-novelty/")
 
 colours_classes <- fish(n=1,option="Balistoides_conspicillum", end=0.9, 
@@ -20,14 +25,14 @@ colours_classes[4] <- fish(n=1,option="Balistoides_conspicillum", end=0.2,
 
 gene_names <- readLines("Results/0_preprocessing/list_final.txt")
 
-outliers_dn_species <- read.csv("Results/outliers_species/dn_chi95.csv")
+outliers_dn_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/dn_chi95.csv")
 colnames(outliers_dn_species) <- c("n", "species", "gene")
-outliers_ds_species <- read.csv("Results/outliers_species/ds_chi95.csv")
+outliers_ds_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/ds_chi95.csv")
 colnames(outliers_ds_species) <- c("n", "species", "gene")
-outliers_dnds_species <- read.csv("Results/outliers_species/dnds_chi95.csv")
+outliers_dnds_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/dnds_chi95.csv")
 colnames(outliers_dnds_species) <- c("n", "species", "gene")
-outliers_pure_species <- read.csv("Results/outliers_species/pure_chi95.csv")
-colnames(outliers_pure_species) <- c("n", "species", "gene")
+outliers_raw_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/raw_chi95.csv")
+colnames(outliers_raw_species) <- c("n", "species", "gene")
 
 meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat_reptraits.tsv")
 meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
@@ -58,7 +63,7 @@ plot_tree <- plot_tree +
             fill = c("grey90", "grey85", "grey80", "grey75", "grey70", "grey65"),
             color= "black",
             lab_color = "black",
-            pos = list("top"), size = "auto",
+            pos = list("bottom"), size = "auto",
             height = list(unit(1, "lines"))) +
   scale_x_continuous(breaks = seq(-240, 0, 20), labels = abs(seq(-240, 0, 20))) +
   theme(panel.grid.major   = element_line(color="grey80", size=.2),
@@ -314,43 +319,43 @@ dev.off()
 heatmap_dnds
 ggsave("Plots/2_comparison_outliers/heatmap_dnds.pdf", width = 8, height = 5)
 
-# PURE
-data_heatmap_pure <- outliers_pure_species %>% dplyr::select(c("species", "gene"))
+# RAW
+data_heatmap_raw <- outliers_raw_species %>% dplyr::select(c("species", "gene"))
 
-matrix_heatmap_pure <- matrix(0, nrow = length(species_list), ncol = length(species_list))
-rownames(matrix_heatmap_pure) <- species_list
-colnames(matrix_heatmap_pure) <- species_list
+matrix_heatmap_raw <- matrix(0, nrow = length(species_list), ncol = length(species_list))
+rownames(matrix_heatmap_raw) <- species_list
+colnames(matrix_heatmap_raw) <- species_list
 
 for (i in 1:length(species_list)) {
   for (j in 1:length(species_list)) {
-    genes_i <- data_heatmap_pure$gene[data_heatmap_pure$species == species_list[i]]
-    genes_j <- data_heatmap_pure$gene[data_heatmap_pure$species == species_list[j]]
-    matrix_heatmap_pure[i, j] <- length(intersect(genes_i, genes_j))
+    genes_i <- data_heatmap_raw$gene[data_heatmap_raw$species == species_list[i]]
+    genes_j <- data_heatmap_raw$gene[data_heatmap_raw$species == species_list[j]]
+    matrix_heatmap_raw[i, j] <- length(intersect(genes_i, genes_j))
     
     # if same species
     # if (i == j) {
-    #   other_genes <- data_heatmap_pure$gene[data_heatmap_pure$species != species_list[i]]
+    #   other_genes <- data_heatmap_raw$gene[data_heatmap_raw$species != species_list[i]]
     #   unique_genes <- setdiff(genes_i, other_genes)
-    #   matrix_heatmap_pure[i, j] <- length(unique_genes)
+    #   matrix_heatmap_raw[i, j] <- length(unique_genes)
     # }
   }
 }
 
-df_heatmap_pure <- melt(matrix_heatmap_pure)
-df_heatmap_pure <- merge(df_heatmap_pure, df_species_id, by.x="Var1", by.y="ID", all.x=T)
-colnames(df_heatmap_pure) <- c("Var1", "Var2", "value", "Species1")
-df_heatmap_pure <- merge(df_heatmap_pure, df_species_id, by.x="Var2", by.y="ID", all.x=T)
-colnames(df_heatmap_pure) <- c("Var2", "Var1", "value", "Species1", "Species2")
+df_heatmap_raw <- melt(matrix_heatmap_raw)
+df_heatmap_raw <- merge(df_heatmap_raw, df_species_id, by.x="Var1", by.y="ID", all.x=T)
+colnames(df_heatmap_raw) <- c("Var1", "Var2", "value", "Species1")
+df_heatmap_raw <- merge(df_heatmap_raw, df_species_id, by.x="Var2", by.y="ID", all.x=T)
+colnames(df_heatmap_raw) <- c("Var2", "Var1", "value", "Species1", "Species2")
 
-df_heatmap_pure$Species1 <- factor(df_heatmap_pure$Species1, 
+df_heatmap_raw$Species1 <- factor(df_heatmap_raw$Species1, 
                                    levels=species_ordered_list)
-df_heatmap_pure$Species2 <- factor(df_heatmap_pure$Species2, 
+df_heatmap_raw$Species2 <- factor(df_heatmap_raw$Species2, 
                                    levels=species_ordered_list[rev(1:length(species_ordered_list))])
 
-heatmap_pure <- ggplot(df_heatmap_pure, aes(x = Species1, y = Species2, fill = value)) +
+heatmap_raw <- ggplot(df_heatmap_raw, aes(x = Species1, y = Species2, fill = value)) +
   geom_tile() +
   geom_text(aes(label=value), color = "white") +
-  labs(title = "PURE",
+  labs(title = "RAW",
        x = "Species",
        y = "Species") +
   scale_fill_gradientn(name = "Overlapping genes", colours=c("#72315C", "#A6A867")) +
@@ -359,15 +364,12 @@ heatmap_pure <- ggplot(df_heatmap_pure, aes(x = Species1, y = Species2, fill = v
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1, face = 'italic')) +
   theme(text = element_text(family = "Arial"))
 
-svglite('Plots/2_comparison_outliers/heatmap_pure.svg', width = 8, height = 5)
-print(heatmap_pure)
+svglite('Plots/2_comparison_outliers/heatmap_raw.svg', width = 8, height = 5)
+print(heatmap_raw)
 dev.off()
 
-heatmap_pure
-ggsave("Plots/2_comparison_outliers/heatmap_pure.pdf", width = 8, height = 5)
-
-clust_pure <- hclust(dist(matrix_heatmap_pure))
-plot(clust_pure)
+heatmap_raw
+ggsave("Plots/2_comparison_outliers/heatmap_raw.pdf", width = 8, height = 5)
 
 
 ################
