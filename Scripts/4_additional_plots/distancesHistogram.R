@@ -20,13 +20,4 @@ hist(df_allgenes$distance,
 abline(v=threshold,col='red')
 dev.off()
 
-pdf(file.path(output,'dnds_outlier_pvalues.pdf'),
-    width = 8,
-    height = 4)
-breaks <- seq(0,1,by=0.005)
-hist(df_allgenes$pval,
-     breaks=breaks,
-     main = 'P-values of distances',
-     xlab = 'p-value',
-     xlim=c(0,1))
-dev.off()
+

@@ -1,8 +1,4 @@
 
-#matrices <- readRDS('Scripts/test_zscores/matrices.rds')
-#df <- readRDS('Scripts/test_zscores/df.rds')
-#quantile_threshold = 0.95
-
 detect_outliers_and_extract_quantiles <- function(matrices, df, quantile_threshold = 0.95) {
   # Compute Mahalanobis distances for matrices
   center_matrix <- colMeans(df, na.rm = T)
@@ -13,6 +9,8 @@ detect_outliers_and_extract_quantiles <- function(matrices, df, quantile_thresho
   ### get chisq values 
   df_dim <- ncol(df)
   pchisq <- pchisq(distances, df = df_dim, lower.tail = FALSE)
+  p_adj <- p.adjust(pchisq, method = 'bonferroni')
+  
   
   # Calculate the quantile threshold
   threshold <- quantile(distances, quantile_threshold)
@@ -23,7 +21,7 @@ detect_outliers_and_extract_quantiles <- function(matrices, df, quantile_thresho
   outlier_matrices <- matrices[outlier_indices]
   # Return a list with indices and matrices
   list(indices = outlier_indices, matrices = outlier_matrices,
-       distances_all = distances, pchisq_all = pchisq)
+       distances_all = distances, pchisq_all = p_adj)
 }
 
 detect_outliers_and_extract_chisq <- function(matrix_list, df, conf = 0.95) {
@@ -37,6 +35,7 @@ detect_outliers_and_extract_chisq <- function(matrix_list, df, conf = 0.95) {
   ### get chisq values 
   df_dim <- ncol(df)
   pchisq <- pchisq(distances, df = df_dim, lower.tail = FALSE)
+  p_adj <- p.adjust(pchisq, method = 'bonferroni')
   
   # Calculate the quantile threshold
   degrees_freedom <- ncol(df) 
@@ -50,6 +49,6 @@ detect_outliers_and_extract_chisq <- function(matrix_list, df, conf = 0.95) {
   
   # Return a list with indices and matrices
   list(indices = outlier_indices, matrices = outlier_matrices,
-       distances_all = distances, pchisq_all = pchisq)
+       distances_all = distances, pchisq_all = p_adj)
 }
 

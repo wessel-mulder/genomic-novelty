@@ -36,8 +36,6 @@ test_matrices_symmetric <- list(
            NA, NA, NA, NA, NA, NA, 0), nrow = 7, byrow = TRUE)
 )
 
-# You can now use this list for testing
-test_matrices_symmetric
 
 mat <- matrices[[1]]
 
