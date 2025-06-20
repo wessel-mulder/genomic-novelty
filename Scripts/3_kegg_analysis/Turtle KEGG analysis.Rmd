@@ -6,7 +6,6 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = "/Users/jule/Desktop/turtle-jeans")
 knitr::opts_chunk$set(echo = TRUE)
 library(clusterProfiler)
 library("KEGGREST")
@@ -29,11 +28,11 @@ cmy_kegg_df <- data.frame(cmy_id = names(keggConv("ncbi-geneid", "cmy")),
 ## Load background gene_list
 
 ```{r}
-gene_list <- read_tsv("Data/KEGG og2geneid/candidate_enricher_gene_info.txt", 
+gene_list <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/candidate_enricher_gene_info.txt", 
                       col_names = c("gene","ncbi_gid","info")) %>% 
   select(-info) %>% 
   mutate( ncbi_gid = as.character(ncbi_gid))
-gene_input <- read_tsv("Data/KEGG og2geneid/candidate_enricher_og2gene.txt",
+gene_input <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/candidate_enricher_og2gene.txt",
                        col_names = c("busco_id","gene"))
 genes <- left_join(gene_input,gene_list, by = "gene") %>% 
   left_join(.,cmy_kegg_df, by = "ncbi_gid" ) %>% 
@@ -45,23 +44,23 @@ genes <- left_join(gene_input,gene_list, by = "gene") %>%
 ### load outiler genes
 ```{r}
 # 254 genes
-outliers_dn <- read.csv("Results/outliers_genes_dn_q95.csv", col.names = c("n", "busco_id")) %>% 
+outliers_dn <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dn_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
 # 255 genes, converted 248 genes. 
-outliers_ds <- read.csv("Results/outliers_genes_ds_q95.csv", col.names = c("n", "busco_id")) %>% 
+outliers_ds <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/ds_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
 # 255 genes, converted 252 genes.
-outliers_dnds <- read.csv("Results/outliers_genes_dnds_q95.csv", col.names = c("n", "busco_id")) %>% 
+outliers_dnds <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dnds_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
 
 # 255 genes, converted 254 genes.
-outliers_pure <- read.csv("Results/outliers_genes_pure_q95.csv", col.names = c("n", "busco_id")) %>% 
+outliers_pure <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/raw_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
@@ -168,26 +167,26 @@ kegg_ref_genes_pure <- enrich_ref_kegg(outliers_pure) # 3
 #### load data
 ```{r}
 # 501 rows and all converted
-outliers_dn_species <- read.csv("Results/outliers_species_dn_q95.csv", 
+outliers_dn_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/dn_chi95.csv", 
                                 col.names = c("n", "species", "busco_id")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id, species) 
 ### missing 2 genes 168156at32523 and 291010at32523 
-outliers_ds_species <- read.csv("Results/outliers_species_ds_q95.csv", 
+outliers_ds_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/ds_chi95.csv", 
                                 col.names = c("n", "species", "busco_id")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id, species)
 ### missing 2 genes 283327at32523 and 290126at32523 
-outliers_dnds_species <- read.csv("Results/outliers_species_dnds_q95.csv", 
+outliers_dnds_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/dnds_chi95.csv", 
                                   col.names = c("n", "species", "busco_id")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id, species)
 
 ### 700 rows, missing one gene 291010at32523
-outliers_pure_species <- read.csv("Results/outliers_species_pure_q95.csv", 
+outliers_pure_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/raw_chi95.csv", 
                                   col.names = c("n", "species", "busco_id")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 

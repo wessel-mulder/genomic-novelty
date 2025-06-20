@@ -237,21 +237,21 @@ pure_outliers_species <- detect_outliers_and_extract_chisq(pure_impute, pure_df,
 
 text <- dNdS_outliers_species$indices
 split <- strsplit(text,'_')
-df <- do.call(rbind, lapply(split, function(x) data.frame(Gene = x[1], Species = x[2])))
+df <- do.call(rbind, lapply(split, function(x) data.frame(species = x[1], busco_id = x[2])))
 write.csv(df,file.path(output,'outliers_species','dnds_chi95.csv'))
 
 text <- dN_outliers_species$indices
 split <- strsplit(text,'_')
-df <- do.call(rbind, lapply(split, function(x) data.frame(Gene = x[1], Species = x[2])))
+df <- do.call(rbind, lapply(split, function(x) data.frame(species = x[1], busco_id = x[2])))
 write.csv(df,file.path(output,'outliers_species','dn_chi95.csv'))
 
 text <- dS_outliers_species$indices
 split <- strsplit(text,'_')
-df <- do.call(rbind, lapply(split, function(x) data.frame(Gene = x[1], Species = x[2])))
+df <- do.call(rbind, lapply(split, function(x) data.frame(species = x[1], busco_id = x[2])))
 write.csv(df,file.path(output,'outliers_species','ds_chi95.csv'))
 
 text <- pure_outliers_species$indices
 split <- strsplit(text,'_')
-df <- do.call(rbind, lapply(split, function(x) data.frame(Gene = x[1], Species = x[2])))
+df <- do.call(rbind, lapply(split, function(x) data.frame(species = x[1], busco_id = x[2])))
 write.csv(df,file.path(output,'outliers_species','raw_chi95.csv'))
 
