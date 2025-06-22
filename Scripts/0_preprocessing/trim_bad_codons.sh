@@ -1,7 +1,10 @@
 # Run R script to trim bad codons (meaning many gaps or high heterozygosity)
 
+# Create output directory
+mkdir ../../Data/0_preprocessing/BUSCO_alignments_trimmed
+
 # For each gene
-cat list_enough_taxa.txt | while read gene
+cat ../../Data/0_preprocessing/list_enough_taxa.txt | while read gene
 do
 
 	# copy prepared R script

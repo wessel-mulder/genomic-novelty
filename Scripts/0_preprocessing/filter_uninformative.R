@@ -4,7 +4,7 @@
 library(ape)
 
 # read in current alignment file that has been trimmed based on codons
-al <- read.dna('BUSCO_alignments_trimmed/99895at32523.fa', format="fasta")
+al <- read.dna('../../Data/0_preprocessing/BUSCO_alignments_trimmed/99895at32523.fa', format="fasta")
 
 # get indices of segregating sites of alignment
 n_seg_sites <- seg.sites(al)
@@ -17,7 +17,7 @@ print(length(n_seg_sites))
 if (length(n_seg_sites) > 9) {
   
   # filtering is done by only coping those alignments to the new location that fulfill criterion
-  write.dna(al, 'BUSCO_alignments_trimmed_final/99895at32523.fa', 
+  write.dna(al, '../../Data/0_preprocessing/BUSCO_alignments_trimmed_final/99895at32523.fa', 
             format="fasta", colsep = "")
   
 }

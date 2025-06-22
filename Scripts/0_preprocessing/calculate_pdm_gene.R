@@ -3,7 +3,7 @@
 library(ape)
 
 # read in current alignment file
-al <- read.dna('BUSCO_alignments_trimmed_final_pis/99895at32523.fa', format = "fasta")
+al <- read.dna('../../Data/0_preprocessing/BUSCO_alignments_trimmed_final_pis/99895at32523.fa', format = "fasta")
 
 # compute pairwise distance matrix
 dist <- dist.dna(al, model = "raw")
@@ -12,7 +12,7 @@ dist <- dist.dna(al, model = "raw")
 dist <- as.matrix(dist)
 
 # write pariwise distance matrix into new directory
-write.table(dist, 'dist_matrices/99895at32523.dist', row.names=TRUE, col.names=TRUE)
+write.table(dist, '../../Data/0_preprocessing/dist_matrices/99895at32523.dist', row.names=TRUE, col.names=TRUE)
 
 # how to read it into R again
 # dist <- read.table('dist_matrices/99895at32523.dist')

@@ -1,7 +1,10 @@
 # Run R script to check that all genes have at least 10 parsimony informative sites
 
+# Create output directory
+mkdir ../../Data/0_preprocessing/BUSCO_alignments_trimmed_final_pis
+
 # For each gene
-cat list_enough_taxa.txt | while read gene
+cat ../../Data/0_preprocessing/list_enough_taxa.txt | while read gene
 do
 	
 	# copy prepared R script

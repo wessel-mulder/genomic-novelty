@@ -48,7 +48,7 @@ trimCodons <- function(al, threshet = 0.5){
 }
 
 # read in current alignment file that has been trimmed based on codons
-al <- read.dna('BUSCO_alignments_no_stop/99895at32523.fasta', format="fasta")
+al <- read.dna('../../Data/0_preprocessing/BUSCO_alignments_no_stop/99895at32523.fasta', format="fasta")
 
 # get trimmed alignment without gappy columns
 al_no_gaps <- trimCols(al, prop = 0.5)
@@ -57,6 +57,6 @@ al_no_gaps <- trimCols(al, prop = 0.5)
 al_no_heterozygous <- trimCodons(al_no_gaps)
 
 # write trimmed alignment into new directory
-write.dna(al_no_heterozygous, 'BUSCO_alignments_trimmed/99895at32523.fa', 
+write.dna(al_no_heterozygous, '../../Data/0_preprocessing/BUSCO_alignments_trimmed/99895at32523.fa', 
           format="fasta", colsep = "")
 

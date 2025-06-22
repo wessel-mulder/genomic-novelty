@@ -1,11 +1,14 @@
 # Script to make number of bases multiple of 3
 # forces alignment into reading-frame, but removing first 0-2 bases
 
+# Create output directory
+mkdir ../../Data/0_preprocessing/BUSCO_alignments_correct_n_codons/
+
 # For each gene
-cat list_enough_taxa.txt | while read gene
+cat ../../Data/0_preprocessing/list_enough_taxa.txt | while read gene
 do
 	# Write whole sequence in one line and then go line by line
-	seqkit seq -w 0 BUSCO_alignments_enough_taxa/${gene}.fa | while read line
+	seqkit seq -w 0 ../../Data/0_preprocessing/BUSCO_alignments_enough_taxa/${gene}.fa | while read line
 	do
 		# If line is a header starting with >
 		if [[ $line == ">"* ]]; then
@@ -32,5 +35,5 @@ do
             fi
         fi
     # Save in new fasta file
-    done > BUSCO_alignments_correct_n_codons/${gene}.fa
+    done > ../../Data/0_preprocessing/BUSCO_alignments_correct_n_codons/${gene}.fa
 done

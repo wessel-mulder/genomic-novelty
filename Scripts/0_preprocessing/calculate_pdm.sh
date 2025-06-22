@@ -1,7 +1,10 @@
 # Run R script to calculate pairwise distance matrices on trimmed multiple sequence alignments
 
+# Create output directory
+mkdir ../../Data/0_preprocessing/dist_matrices
+
 # For each gene in list of final genes (after all filtering steps)
-cat list_final.txt | while read gene
+cat ../../Data/0_preprocessing/list_final.txt | while read gene
 do
 
 	# copy prepared R script

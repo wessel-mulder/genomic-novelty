@@ -1,6 +1,6 @@
-seqfile = /Users/jule/Desktop/dNdS_analysis/BUSCO_alignments_trimmed_final_pis/66at32523.fa * sequence data file name
-outfile = /Users/jule/Desktop/dNdS_analysis/codeml_out/66at32523/66at32523 * main result file name
-treefile = /Users/jule/Desktop/dNdS_analysis/gene_trees/RAxML_bestTree.66at32523 * tree structure file name
+seqfile = ../../BUSCO_alignments_trimmed_final_pis/66at32523.fa * sequence data file name
+outfile = 66at32523 * main result file name
+treefile = * tree structure file name
 noisy = 2 * 0,1,2,3,9: how much rubbish on the screen
 verbose = 0 * 1: detailed output, 0: concise output
 runmode = -2 * 0: user tree; 1: semi-automatic; 2: automatic; 3: StepwiseAddition; (4,5):PerturbationNNI; -2: pairwise

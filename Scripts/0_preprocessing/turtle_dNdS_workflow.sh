@@ -7,7 +7,7 @@
 ./filter_taxa_representation.sh
 
 # create new gene list to work with from now on
-ls BUSCO_alignments_enough_taxa > list_enough_taxa.txt
+ls ../../Data/0_preprocessing/BUSCO_alignments_enough_taxa > ../../Data/0_preprocessing/list_enough_taxa.txt
 sed -i '' "s/.fa//g" list_enough_taxa.txt
 
 # remove 0-2 codons from the start of the alignment to make sure that number of codons is multiple of 3
@@ -30,11 +30,11 @@ sed -i '' "s/.fa//g" list_enough_taxa.txt
 # ./filter_uninformative.sh > n_seg_sites.txt
 
 # filter out genes that are not informative (< 10 parsimony informative sites)
-./filter_parsimony_uninformative.sh > n_parsimony_sites.txt
+./filter_parsimony_uninformative.sh > ../../Data/0_preprocessing/n_parsimony_sites.txt
 
 # get final list of genes that should be used as input for codeml
-ls BUSCO_alignments_trimmed_final_pis > list_final.txt
-sed -i '' "s/.fa//g" list_final.txt
+ls ../../Data/0_preprocessing/BUSCO_alignments_trimmed_final_pis > ../../Data/0_preprocessing/list_final.txt
+sed -i '' "s/.fa//g" ../../Data/0_preprocessing/list_final.txt
 # diff list_enough_taxa.txt list_final.txt
 
 # run codeML to get pairwise dN and dS
@@ -43,7 +43,7 @@ sed -i '' "s/.fa//g" list_final.txt
 # copy all dN and dS into on folder
 ./sort_dN_dS_data.sh
 
-# calculate pure distance matrices on final trimmed alignments (independent of dN/dS)
+# calculate raw pairwise distance matrices on final trimmed alignments (independent of dN/dS)
 ./calculate_pdm.sh
 
 # manually remove gene 162482at32523, because the dN/dS is not working for this gene for some reason :(
