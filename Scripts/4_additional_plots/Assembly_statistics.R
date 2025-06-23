@@ -1,6 +1,11 @@
 library(tidyverse)
 library(ape)
 library(ggtree)
+library(svglite)
+library(extrafont)
+# import arial (only needed once)
+# font_import(pattern = "Arial", prompt = FALSE)
+loadfonts(device = "pdf")
 
 setwd("/Users/jule/Desktop/genomic-novelty/")
 
@@ -25,9 +30,9 @@ stats <- read_tsv("Data/4_additional_plots/Assembly_stats.tsv")
 stats$`BUSCO S` <- stats$`BUSCO S` * 100
 
 # plot for our tree
-plot_tree <- ggtree::ggtree(species_tree_plot) + ggtree::xlim_tree(450)
+plot_tree <- ggtree::ggtree(species_tree_plot) + ggtree::xlim_tree(950)
 plot_tree <- plot_tree +
-  ggtree::geom_tiplab(size=5, offset=4, fontface = "italic") + 
+  ggtree::geom_tiplab(size=4, offset=4, fontface = "italic") + 
   theme_tree2() +
   vexpand(0.01, direction = -1)
 plot_tree
@@ -58,12 +63,17 @@ facet_stats <- facet_plot(facet_stats,
                           mapping = aes(x=`BUSCO S`, fill=`BUSCO S`),
                           stat="identity",
                           orientation='y',
-                          panel="BUSCO S",
+                          panel="BUSCO S (%)",
                           position = position_stack(reverse = TRUE),
-                          show.legend = F) +
-  xlim_tree(240)
+                          show.legend = F)
+
+facet_stats + theme(text = element_text(family = "Arial"))
 
 facet_stats
 
-ggsave("Plots/4_additional_plots/assembly_stats.pdf", width = 20, height = 9)
-ggsave("Plots/4_additional_plots/assembly_stats.png", width = 20, height = 9)
+svglite("Plots/4_additional_plots/assembly_stats.svg", width = 11, height = 5)
+print(facet_stats)
+dev.off()
+
+ggsave("Plots/4_additional_plots/assembly_stats.pdf", width = 11, height = 5)
+ggsave("Plots/4_additional_plots/assembly_stats.png", width = 11, height = 5)

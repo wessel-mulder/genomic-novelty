@@ -6,8 +6,8 @@ library(ggtree)
 library(deeptime)
 library(phangorn)
 library(svglite)
-
 library(extrafont)
+library(Cairo)
 # import arial (only needed once)
 # font_import(pattern = "Arial", prompt = FALSE)
 loadfonts(device = "pdf")
@@ -68,13 +68,16 @@ plot_tree <- plot_tree +
   scale_x_continuous(breaks = seq(-240, 0, 20), labels = abs(seq(-240, 0, 20))) +
   theme(panel.grid.major   = element_line(color="grey80", size=.2),
         panel.grid.major.y = element_blank(),
-        text = element_text(family = "Arial"))
+        text = element_text(family = "Arial2"))
 revts(plot_tree)
 
 svglite('Plots/2_comparison_outliers/species_tree_branch_lengths.svg', width = 8, height = 5)
 revts(plot_tree)
 dev.off()
 
+CairoPDF("Plots/2_comparison_outliers/species_tree_branch_lengths.pdf", width = 8, height = 5)
+revts(plot_tree)
+dev.off()
 ggsave("Plots/2_comparison_outliers/species_tree_branch_lengths.pdf", width = 8, height = 5)
 
 

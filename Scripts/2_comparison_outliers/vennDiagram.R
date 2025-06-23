@@ -1,6 +1,10 @@
 library(ggvenn)
 library(fishualize)
 library(svglite)
+library(extrafont)
+# import arial (only needed once)
+# font_import(pattern = "Arial", prompt = FALSE)
+loadfonts(device = "pdf")
 
 setwd("/Users/jule/Desktop/genomic-novelty/")
 
