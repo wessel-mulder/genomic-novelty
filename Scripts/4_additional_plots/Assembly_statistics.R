@@ -74,6 +74,3 @@ facet_stats
 svglite("Plots/4_additional_plots/assembly_stats.svg", width = 11, height = 5)
 print(facet_stats)
 dev.off()
-
-ggsave("Plots/4_additional_plots/assembly_stats.pdf", width = 11, height = 5)
-ggsave("Plots/4_additional_plots/assembly_stats.png", width = 11, height = 5)

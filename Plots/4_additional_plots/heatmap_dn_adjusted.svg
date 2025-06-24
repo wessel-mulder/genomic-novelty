@@ -1,0 +1,3236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="576.00pt"
+   height="360.00pt"
+   viewBox="0 0 576.00 360.00"
+   version="1.1"
+   id="svg735"
+   sodipodi:docname="heatmap_dn_adjusted.svg"
+   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
+   inkscape:export-filename="heatmap_dn_adjusted.pdf"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs735" />
+  <sodipodi:namedview
+     id="namedview735"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     inkscape:zoom="1.1320243"
+     inkscape:cx="394.86784"
+     inkscape:cy="110.42165"
+     inkscape:window-width="1512"
+     inkscape:window-height="859"
+     inkscape:window-x="1920"
+     inkscape:window-y="405"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g4"
+     inkscape:export-bgcolor="#ffffffff" />
+  <g
+     class="svglite"
+     id="g735">
+    <defs
+       id="defs1">
+      <style
+         type="text/css"
+         id="style1"><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+    </defs>
+    <defs
+       id="defs2">
+      <clipPath
+         id="cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=">
+        <rect
+           x="0.00"
+           y="0.00"
+           width="576.00"
+           height="360.00"
+           id="rect2" />
+      </clipPath>
+    </defs>
+    <g
+       clip-path="url(#cpMC4wMHw1NzYuMDB8MC4wMHwzNjAuMDA=)"
+       id="g2" />
+    <defs
+       id="defs3">
+      <clipPath
+         id="cpMTM0LjgxfDQ1Ni4yMHwyMy4xOHwyNTIuMDc=">
+        <rect
+           x="134.81"
+           y="23.18"
+           width="321.38"
+           height="228.89"
+           id="rect3" />
+      </clipPath>
+    </defs>
+    <g
+       clip-path="url(#cpMTM0LjgxfDQ1Ni4yMHwyMy4xOHwyNTIuMDc=)"
+       id="g684">
+      <polyline
+         points="134.81,244.52 456.20,244.52 "
+         style="stroke:#ebebeb;stroke-width:1.08948;stroke-linecap:butt"
+         id="polyline3"
+         transform="matrix(0.98212233,0,0,0.98212233,2.4100881,4.3714468)" />
+      <polyline
+         points="134.81,231.95 456.20,231.95 "
+         style="stroke:#ebebeb;stroke-width:1.16405;stroke-linecap:butt"
+         id="polyline4"
+         transform="matrix(0.91920421,0,0,0.91920421,10.892081,18.740584)" />
+      <polyline
+         points="134.81,219.37 456.20,219.37 "
+         style="stroke:#ebebeb;stroke-width:1.24057;stroke-linecap:butt"
+         id="polyline5"
+         transform="matrix(0.86250541,0,0,0.86250541,18.535646,30.162189)" />
+      <polyline
+         points="134.81,206.80 456.20,206.80 "
+         style="stroke:#ebebeb;stroke-width:1.33727;stroke-linecap:butt"
+         id="polyline6"
+         transform="matrix(0.80013673,0,0,0.80013673,26.943568,41.331725)" />
+      <polyline
+         points="134.81,194.22 456.20,194.22 "
+         style="stroke:#ebebeb;stroke-width:1.41764;stroke-linecap:butt"
+         id="polyline7"
+         transform="matrix(0.75477769,0,0,0.75477769,33.05842,47.627078)" />
+      <polyline
+         points="134.81,181.64 456.20,181.64 "
+         style="stroke:#ebebeb;stroke-width:1.53903;stroke-linecap:butt"
+         id="polyline8"
+         transform="matrix(0.69524395,0,0,0.69524395,41.084164,55.35589)" />
+      <polyline
+         points="134.81,169.07 456.20,169.07 "
+         style="stroke:#ebebeb;stroke-width:1.67568;stroke-linecap:butt"
+         id="polyline9"
+         transform="matrix(0.63854515,0,0,0.63854515,48.727729,61.111172)" />
+      <polyline
+         points="134.81,156.49 456.20,156.49 "
+         style="stroke:#ebebeb;stroke-width:1.82563;stroke-linecap:butt"
+         id="polyline10"
+         transform="matrix(0.58609876,0,0,0.58609876,55.798027,64.771406)" />
+      <polyline
+         points="134.81,143.91 456.20,143.91 "
+         style="stroke:#ebebeb;stroke-width:2.02658;stroke-linecap:butt"
+         id="polyline11"
+         transform="matrix(0.52798248,0,0,0.52798248,63.632681,67.928041)" />
+      <polyline
+         points="134.81,131.34 456.20,131.34 "
+         style="stroke:#ebebeb;stroke-width:2.23015;stroke-linecap:butt"
+         id="polyline12"
+         transform="matrix(0.4797885,0,0,0.4797885,70.129712,68.324578)" />
+      <polyline
+         points="134.81,118.76 456.20,118.76 "
+         style="stroke:#ebebeb;stroke-width:2.53752;stroke-linecap:butt"
+         id="polyline13"
+         transform="matrix(0.42167223,0,0,0.42167223,77.964366,68.682206)" />
+      <polyline
+         points="134.81,106.18 456.20,106.18 "
+         style="stroke:#ebebeb;stroke-width:2.89796;stroke-linecap:butt"
+         id="polyline14"
+         transform="matrix(0.36922584,0,0,0.36922584,85.034664,66.9756)" />
+      <polyline
+         points="134.81,93.61 456.20,93.61 "
+         style="stroke:#ebebeb;stroke-width:3.40825;stroke-linecap:butt"
+         id="polyline15"
+         transform="matrix(0.31394451,0,0,0.31394451,92.48714,64.221654)" />
+      <polyline
+         points="134.81,81.03 456.20,81.03 "
+         style="stroke:#ebebeb;stroke-width:4.18249;stroke-linecap:butt"
+         id="polyline16"
+         transform="matrix(0.25582824,0,0,0.25582824,100.32179,60.300238)" />
+      <polyline
+         points="134.81,68.45 456.20,68.45 "
+         style="stroke:#ebebeb;stroke-width:4.9832;stroke-linecap:butt"
+         id="polyline17"
+         transform="matrix(0.21472161,0,0,0.21472161,105.86338,53.752306)" />
+      <polyline
+         points="134.81,55.88 456.20,55.88 "
+         style="stroke:#ebebeb;stroke-width:7.15633;stroke-linecap:butt"
+         id="polyline18"
+         transform="matrix(0.14951799,0,0,0.14951799,114.65348,47.524935)" />
+      <polyline
+         points="134.81,43.30 456.20,43.30 "
+         style="stroke:#ebebeb;stroke-width:9.86981;stroke-linecap:butt"
+         id="polyline19"
+         transform="matrix(0.10841136,0,0,0.10841136,120.19506,38.605788)" />
+      <polyline
+         points="134.81,30.72 456.20,30.72 "
+         style="stroke:#ebebeb;stroke-width:20.6913;stroke-linecap:butt"
+         id="polyline20"
+         transform="matrix(0.05171256,0,0,0.05171256,127.83863,29.13139)" />
+      <polyline
+         points="145.41,252.07 145.41,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.09809;stroke-linecap:butt"
+         id="polyline21"
+         transform="matrix(0.97441897,0,0,0.97441897,3.7197381,6.4482112)" />
+      <polyline
+         points="163.07,252.07 163.07,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.18063;stroke-linecap:butt"
+         id="polyline22"
+         transform="matrix(0.90629291,0,0,0.90629291,15.280814,23.620745)" />
+      <polyline
+         points="180.73,252.07 180.73,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.245;stroke-linecap:butt"
+         id="polyline23"
+         transform="matrix(0.85943937,0,0,0.85943937,25.403522,35.431118)" />
+      <polyline
+         points="198.38,252.07 198.38,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.34846;stroke-linecap:butt"
+         id="polyline24"
+         transform="matrix(0.79349735,0,0,0.79349735,40.965996,52.053123)" />
+      <polyline
+         points="216.04,252.07 216.04,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.47068;stroke-linecap:butt"
+         id="polyline25"
+         transform="matrix(0.72755533,0,0,0.72755533,58.858948,68.675129)" />
+      <polyline
+         points="233.70,252.07 233.70,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.57592;stroke-linecap:butt"
+         id="polyline26"
+         transform="matrix(0.67896647,0,0,0.67896647,75.025537,80.922923)" />
+      <polyline
+         points="251.36,252.07 251.36,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.69274;stroke-linecap:butt"
+         id="polyline27"
+         transform="matrix(0.63211292,0,0,0.63211292,92.472096,92.733295)" />
+      <polyline
+         points="269.02,252.07 269.02,23.18 "
+         style="stroke:#ebebeb;stroke-width:1.80682;stroke-linecap:butt"
+         id="polyline28"
+         transform="matrix(0.59220065,0,0,0.59220065,109.70618,102.79398)" />
+      <polyline
+         points="286.68,252.07 286.68,23.18 "
+         style="stroke:#ebebeb;stroke-width:2.00675;stroke-linecap:butt"
+         id="polyline29"
+         transform="matrix(0.53319989,0,0,0.53319989,133.82226,117.6663)" />
+      <polyline
+         points="304.33,252.07 304.33,23.18 "
+         style="stroke:#ebebeb;stroke-width:2.24004;stroke-linecap:butt"
+         id="polyline30"
+         transform="matrix(0.47766976,0,0,0.47766976,158.96076,131.66378)" />
+      <polyline
+         points="321.99,252.07 321.99,23.18 "
+         style="stroke:#ebebeb;stroke-width:2.56636;stroke-linecap:butt"
+         id="polyline31"
+         transform="matrix(0.41693369,0,0,0.41693369,187.74152,146.97352)" />
+      <polyline
+         points="339.65,252.07 339.65,23.18 "
+         style="stroke:#ebebeb;stroke-width:2.90489;stroke-linecap:butt"
+         id="polyline32"
+         transform="matrix(0.36834483,0,0,0.36834483,214.54168,159.22132)" />
+      <polyline
+         points="357.31,252.07 357.31,23.18 "
+         style="stroke:#ebebeb;stroke-width:3.3463;stroke-linecap:butt"
+         id="polyline33"
+         transform="matrix(0.31975597,0,0,0.31975597,243.05799,171.46911)" />
+      <polyline
+         points="374.97,252.07 374.97,23.18 "
+         style="stroke:#ebebeb;stroke-width:4.18706;stroke-linecap:butt"
+         id="polyline34"
+         transform="matrix(0.25554926,0,0,0.25554926,279.14669,187.6537)" />
+      <polyline
+         points="392.63,252.07 392.63,23.18 "
+         style="stroke:#ebebeb;stroke-width:5.34949;stroke-linecap:butt"
+         id="polyline35"
+         transform="matrix(0.20001914,0,0,0.20001914,314.09649,201.65118)" />
+      <polyline
+         points="410.28,252.07 410.28,23.18 "
+         style="stroke:#ebebeb;stroke-width:7.58766;stroke-linecap:butt"
+         id="polyline36"
+         transform="matrix(0.14101838,0,0,0.14101838,352.42298,216.5235)" />
+      <polyline
+         points="427.94,252.07 427.94,23.18 "
+         style="stroke:#ebebeb;stroke-width:11.3631;stroke-linecap:butt"
+         id="polyline37"
+         transform="matrix(0.09416484,0,0,0.09416484,387.6431,228.33387)" />
+      <polyline
+         points="445.60,252.07 445.60,23.18 "
+         style="stroke:#ebebeb;stroke-width:22.6162;stroke-linecap:butt"
+         id="polyline38"
+         transform="matrix(0.0473113,0,0,0.0473113,424.51809,240.14424)" />
+      <rect
+         x="136.58"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect40" />
+      <rect
+         x="277.85"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #75375D;"
+         id="rect43" />
+      <rect
+         x="348.48"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #957D65;"
+         id="rect44" />
+      <rect
+         x="171.90"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect45" />
+      <rect
+         x="242.53"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect46" />
+      <rect
+         x="154.24"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect47" />
+      <rect
+         x="295.51"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect48" />
+      <rect
+         x="189.56"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect49" />
+      <rect
+         x="224.87"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect50" />
+      <rect
+         x="330.82"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect51" />
+      <rect
+         x="313.16"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect52" />
+      <rect
+         x="260.19"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect53" />
+      <rect
+         x="207.21"
+         y="175.35"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect54" />
+      <rect
+         x="189.56"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect58" />
+      <rect
+         x="242.53"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8E6D63;"
+         id="rect59" />
+      <rect
+         x="136.58"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect61" />
+      <rect
+         x="171.90"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect63" />
+      <rect
+         x="224.87"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect66" />
+      <rect
+         x="207.21"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect69" />
+      <rect
+         x="260.19"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9C8D66;"
+         id="rect71" />
+      <rect
+         x="154.24"
+         y="112.47"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect73" />
+      <rect
+         x="207.21"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect75" />
+      <rect
+         x="171.90"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect76" />
+      <rect
+         x="189.56"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect79" />
+      <rect
+         x="260.19"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect80" />
+      <rect
+         x="277.85"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect83" />
+      <rect
+         x="295.51"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9E9266;"
+         id="rect84" />
+      <rect
+         x="154.24"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect86" />
+      <rect
+         x="224.87"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect87" />
+      <rect
+         x="242.53"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8C6863;"
+         id="rect88" />
+      <rect
+         x="136.58"
+         y="137.62"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect89" />
+      <rect
+         x="171.90"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect92" />
+      <rect
+         x="154.24"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect93" />
+      <rect
+         x="136.58"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect96" />
+      <rect
+         x="330.82"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A8865;"
+         id="rect97" />
+      <rect
+         x="295.51"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect99" />
+      <rect
+         x="277.85"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect100" />
+      <rect
+         x="242.53"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect102" />
+      <rect
+         x="224.87"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect103" />
+      <rect
+         x="313.16"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect104" />
+      <rect
+         x="207.21"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect105" />
+      <rect
+         x="260.19"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect108" />
+      <rect
+         x="189.56"
+         y="162.78"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect109" />
+      <rect
+         x="136.58"
+         y="37.01"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect121" />
+      <rect
+         x="154.24"
+         y="37.01"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect127" />
+      <rect
+         x="189.56"
+         y="87.32"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect128" />
+      <rect
+         x="154.24"
+         y="87.32"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #72315C;"
+         id="rect132" />
+      <rect
+         x="136.58"
+         y="87.32"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect135" />
+      <rect
+         x="171.90"
+         y="87.32"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect138" />
+      <rect
+         x="224.87"
+         y="87.32"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A8865;"
+         id="rect142" />
+      <rect
+         x="207.21"
+         y="87.32"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect143" />
+      <rect
+         x="136.58"
+         y="74.74"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect149" />
+      <rect
+         x="154.24"
+         y="74.74"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect153" />
+      <rect
+         x="207.21"
+         y="74.74"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #957D65;"
+         id="rect155" />
+      <rect
+         x="171.90"
+         y="74.74"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect158" />
+      <rect
+         x="189.56"
+         y="74.74"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect161" />
+      <rect
+         x="189.56"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect164" />
+      <rect
+         x="224.87"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #75375D;"
+         id="rect171" />
+      <rect
+         x="277.85"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #917264;"
+         id="rect172" />
+      <rect
+         x="171.90"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #72315C;"
+         id="rect173" />
+      <rect
+         x="136.58"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect174" />
+      <rect
+         x="207.21"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #72315C;"
+         id="rect175" />
+      <rect
+         x="260.19"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect176" />
+      <rect
+         x="242.53"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect180" />
+      <rect
+         x="154.24"
+         y="125.05"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #75375D;"
+         id="rect181" />
+      <rect
+         x="313.16"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8C6863;"
+         id="rect183" />
+      <rect
+         x="260.19"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect185" />
+      <rect
+         x="154.24"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect187" />
+      <rect
+         x="277.85"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #783D5E;"
+         id="rect188" />
+      <rect
+         x="136.58"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #783D5E;"
+         id="rect189" />
+      <rect
+         x="295.51"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect191" />
+      <rect
+         x="171.90"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect192" />
+      <rect
+         x="242.53"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect193" />
+      <rect
+         x="207.21"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #783D5E;"
+         id="rect195" />
+      <rect
+         x="189.56"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect197" />
+      <rect
+         x="224.87"
+         y="150.20"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #783D5E;"
+         id="rect199" />
+      <rect
+         x="348.48"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect200" />
+      <rect
+         x="330.82"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect201" />
+      <rect
+         x="313.16"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect202" />
+      <rect
+         x="401.46"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8C6863;"
+         id="rect203" />
+      <rect
+         x="260.19"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect204" />
+      <rect
+         x="171.90"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect205" />
+      <rect
+         x="295.51"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect206" />
+      <rect
+         x="277.85"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #783D5E;"
+         id="rect207" />
+      <rect
+         x="383.80"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect208" />
+      <rect
+         x="207.21"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect209" />
+      <rect
+         x="224.87"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #75375D;"
+         id="rect210" />
+      <rect
+         x="419.11"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #988265;"
+         id="rect212" />
+      <rect
+         x="242.53"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect213" />
+      <rect
+         x="136.58"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect214" />
+      <rect
+         x="366.14"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect215" />
+      <rect
+         x="154.24"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect216" />
+      <rect
+         x="189.56"
+         y="225.66"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect217" />
+      <rect
+         x="154.24"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect221" />
+      <rect
+         x="171.90"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect225" />
+      <rect
+         x="207.21"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect230" />
+      <rect
+         x="136.58"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect231" />
+      <rect
+         x="189.56"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect232" />
+      <rect
+         x="224.87"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect233" />
+      <rect
+         x="242.53"
+         y="99.89"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A6A867;"
+         id="rect235" />
+      <rect
+         x="136.58"
+         y="24.43"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A8865;"
+         id="rect241" />
+      <rect
+         x="207.21"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect254" />
+      <rect
+         x="436.77"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9E9266;"
+         id="rect255" />
+      <rect
+         x="330.82"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect256" />
+      <rect
+         x="260.19"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect257" />
+      <rect
+         x="295.51"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect258" />
+      <rect
+         x="383.80"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect259" />
+      <rect
+         x="277.85"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #75375D;"
+         id="rect260" />
+      <rect
+         x="154.24"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect261" />
+      <rect
+         x="189.56"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect262" />
+      <rect
+         x="224.87"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect263" />
+      <rect
+         x="136.58"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect264" />
+      <rect
+         x="348.48"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect265" />
+      <rect
+         x="419.11"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect266" />
+      <rect
+         x="171.90"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect267" />
+      <rect
+         x="366.14"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect268" />
+      <rect
+         x="313.16"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect269" />
+      <rect
+         x="242.53"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect270" />
+      <rect
+         x="401.46"
+         y="238.24"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8C6863;"
+         id="rect271" />
+      <rect
+         x="313.16"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect272" />
+      <rect
+         x="171.90"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect273" />
+      <rect
+         x="330.82"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect274" />
+      <rect
+         x="348.48"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect275" />
+      <rect
+         x="136.58"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect276" />
+      <rect
+         x="189.56"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect277" />
+      <rect
+         x="366.14"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8C6863;"
+         id="rect278" />
+      <rect
+         x="277.85"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect279" />
+      <rect
+         x="242.53"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #937864;"
+         id="rect280" />
+      <rect
+         x="295.51"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8C6863;"
+         id="rect282" />
+      <rect
+         x="224.87"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect283" />
+      <rect
+         x="154.24"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect284" />
+      <rect
+         x="383.80"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9E9266;"
+         id="rect285" />
+      <rect
+         x="260.19"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect286" />
+      <rect
+         x="207.21"
+         y="200.51"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect289" />
+      <rect
+         x="366.14"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A6A867;"
+         id="rect290" />
+      <rect
+         x="224.87"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect292" />
+      <rect
+         x="207.21"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect293" />
+      <rect
+         x="330.82"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect294" />
+      <rect
+         x="277.85"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect295" />
+      <rect
+         x="242.53"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect296" />
+      <rect
+         x="313.16"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect298" />
+      <rect
+         x="171.90"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect299" />
+      <rect
+         x="154.24"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7A425E;"
+         id="rect300" />
+      <rect
+         x="295.51"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect301" />
+      <rect
+         x="189.56"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect303" />
+      <rect
+         x="348.48"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect305" />
+      <rect
+         x="260.19"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect306" />
+      <rect
+         x="136.58"
+         y="187.93"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect307" />
+      <rect
+         x="171.90"
+         y="62.16"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect312" />
+      <rect
+         x="154.24"
+         y="62.16"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect313" />
+      <rect
+         x="136.58"
+         y="62.16"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect317" />
+      <rect
+         x="189.56"
+         y="62.16"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #9A8865;"
+         id="rect325" />
+      <rect
+         x="171.90"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect327" />
+      <rect
+         x="154.24"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect328" />
+      <rect
+         x="207.21"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect329" />
+      <rect
+         x="366.14"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect330" />
+      <rect
+         x="242.53"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect331" />
+      <rect
+         x="295.51"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #855861;"
+         id="rect333" />
+      <rect
+         x="330.82"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect334" />
+      <rect
+         x="136.58"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect335" />
+      <rect
+         x="260.19"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect336" />
+      <rect
+         x="348.48"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #825260;"
+         id="rect337" />
+      <rect
+         x="277.85"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect338" />
+      <rect
+         x="401.46"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #A4A367;"
+         id="rect339" />
+      <rect
+         x="189.56"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #875D62;"
+         id="rect340" />
+      <rect
+         x="313.16"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #7D485F;"
+         id="rect341" />
+      <rect
+         x="383.80"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8A6262;"
+         id="rect342" />
+      <rect
+         x="224.87"
+         y="213.08"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect343" />
+      <rect
+         x="154.24"
+         y="49.59"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #783D5E;"
+         id="rect344" />
+      <rect
+         x="171.90"
+         y="49.59"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #917264;"
+         id="rect350" />
+      <rect
+         x="136.58"
+         y="49.59"
+         width="17.66"
+         height="12.58"
+         style="stroke-width: 0.21; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #804D60;"
+         id="rect353" />
+      <text
+         x="145.41"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text363">15</text>
+      <text
+         x="286.68"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text366">13</text>
+      <text
+         x="357.31"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text367">26</text>
+      <text
+         x="180.73"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text368">17</text>
+      <text
+         x="251.36"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text369">18</text>
+      <text
+         x="163.07"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text370">15</text>
+      <text
+         x="304.33"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text371">19</text>
+      <text
+         x="198.38"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text372">21</text>
+      <text
+         x="233.70"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text373">16</text>
+      <text
+         x="339.65"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text374">18</text>
+      <text
+         x="321.99"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text375">17</text>
+      <text
+         x="269.02"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text376">17</text>
+      <text
+         x="216.04"
+         y="185.59"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text377">16</text>
+      <text
+         x="198.38"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text381">21</text>
+      <text
+         x="251.36"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text382">23</text>
+      <text
+         x="145.41"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text384">17</text>
+      <text
+         x="180.73"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text386">17</text>
+      <text
+         x="233.70"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text389">15</text>
+      <text
+         x="216.04"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text392">19</text>
+      <text
+         x="269.02"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text394">29</text>
+      <text
+         x="163.07"
+         y="122.71"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text396">17</text>
+      <text
+         x="216.04"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text398">16</text>
+      <text
+         x="180.73"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text399">17</text>
+      <text
+         x="198.38"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text402">19</text>
+      <text
+         x="269.02"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text403">16</text>
+      <text
+         x="286.68"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text406">18</text>
+      <text
+         x="304.33"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text407">30</text>
+      <text
+         x="163.07"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text409">16</text>
+      <text
+         x="233.70"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text410">18</text>
+      <text
+         x="251.36"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text411">22</text>
+      <text
+         x="145.41"
+         y="147.86"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text412">17</text>
+      <text
+         x="180.73"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text415">15</text>
+      <text
+         x="163.07"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text416">17</text>
+      <text
+         x="145.41"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text419">17</text>
+      <text
+         x="339.65"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text420">28</text>
+      <text
+         x="304.33"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text422">19</text>
+      <text
+         x="286.68"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text423">16</text>
+      <text
+         x="251.36"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text425">21</text>
+      <text
+         x="233.70"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text426">15</text>
+      <text
+         x="321.99"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text427">19</text>
+      <text
+         x="216.04"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text428">17</text>
+      <text
+         x="269.02"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text431">18</text>
+      <text
+         x="198.38"
+         y="173.01"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text432">17</text>
+      <text
+         x="145.41"
+         y="47.25"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text444">16</text>
+      <text
+         x="163.07"
+         y="47.25"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text450">20</text>
+      <text
+         x="198.38"
+         y="97.56"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text451">16</text>
+      <text
+         x="163.07"
+         y="97.56"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text455">12</text>
+      <text
+         x="145.41"
+         y="97.56"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text458">18</text>
+      <text
+         x="180.73"
+         y="97.56"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text461">17</text>
+      <text
+         x="233.70"
+         y="97.56"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text465">28</text>
+      <text
+         x="216.04"
+         y="97.56"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text466">16</text>
+      <text
+         x="145.41"
+         y="84.98"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text472">15</text>
+      <text
+         x="163.07"
+         y="84.98"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text476">15</text>
+      <text
+         x="216.04"
+         y="84.98"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text478">26</text>
+      <text
+         x="180.73"
+         y="84.98"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text481">18</text>
+      <text
+         x="198.38"
+         y="84.98"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text484">19</text>
+      <text
+         x="198.38"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text487">15</text>
+      <text
+         x="233.70"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text494">13</text>
+      <text
+         x="286.68"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text495">24</text>
+      <text
+         x="180.73"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text496">12</text>
+      <text
+         x="145.41"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text497">15</text>
+      <text
+         x="216.04"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text498">12</text>
+      <text
+         x="269.02"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text499">17</text>
+      <text
+         x="251.36"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text503">16</text>
+      <text
+         x="163.07"
+         y="135.28"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text504">13</text>
+      <text
+         x="321.99"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text506">22</text>
+      <text
+         x="269.02"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text508">17</text>
+      <text
+         x="163.07"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text510">16</text>
+      <text
+         x="286.68"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text511">14</text>
+      <text
+         x="145.41"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text512">14</text>
+      <text
+         x="304.33"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text514">17</text>
+      <text
+         x="180.73"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text515">15</text>
+      <text
+         x="251.36"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text516">17</text>
+      <text
+         x="216.04"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text518">14</text>
+      <text
+         x="198.38"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text520">18</text>
+      <text
+         x="233.70"
+         y="160.44"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text522">14</text>
+      <text
+         x="357.31"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text523">15</text>
+      <text
+         x="339.65"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text524">16</text>
+      <text
+         x="321.99"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text525">16</text>
+      <text
+         x="410.28"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text526">22</text>
+      <text
+         x="269.02"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text527">19</text>
+      <text
+         x="180.73"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text528">17</text>
+      <text
+         x="304.33"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text529">16</text>
+      <text
+         x="286.68"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text530">14</text>
+      <text
+         x="392.63"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text531">20</text>
+      <text
+         x="216.04"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text532">16</text>
+      <text
+         x="233.70"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text533">13</text>
+      <text
+         x="427.94"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text535">27</text>
+      <text
+         x="251.36"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text536">20</text>
+      <text
+         x="145.41"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text537">18</text>
+      <text
+         x="374.97"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text538">17</text>
+      <text
+         x="163.07"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text539">15</text>
+      <text
+         x="198.38"
+         y="235.90"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text540">19</text>
+      <text
+         x="163.07"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text544">18</text>
+      <text
+         x="180.73"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text548">20</text>
+      <text
+         x="216.04"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text553">21</text>
+      <text
+         x="145.41"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text554">21</text>
+      <text
+         x="198.38"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text555">20</text>
+      <text
+         x="233.70"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text556">18</text>
+      <text
+         x="251.36"
+         y="110.13"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text558">34</text>
+      <text
+         x="145.41"
+         y="34.67"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text564">28</text>
+      <text
+         x="216.04"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text577">18</text>
+      <text
+         x="445.60"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text578">30</text>
+      <text
+         x="339.65"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text579">17</text>
+      <text
+         x="269.02"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text580">18</text>
+      <text
+         x="304.33"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text581">18</text>
+      <text
+         x="392.63"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text582">21</text>
+      <text
+         x="286.68"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text583">13</text>
+      <text
+         x="163.07"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text584">15</text>
+      <text
+         x="198.38"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text585">17</text>
+      <text
+         x="233.70"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text586">17</text>
+      <text
+         x="145.41"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text587">17</text>
+      <text
+         x="357.31"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text588">17</text>
+      <text
+         x="427.94"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text589">21</text>
+      <text
+         x="180.73"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text590">19</text>
+      <text
+         x="374.97"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text591">18</text>
+      <text
+         x="321.99"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text592">16</text>
+      <text
+         x="251.36"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text593">20</text>
+      <text
+         x="410.28"
+         y="248.47"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text594">22</text>
+      <text
+         x="321.99"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text595">17</text>
+      <text
+         x="180.73"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text596">19</text>
+      <text
+         x="339.65"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text597">21</text>
+      <text
+         x="357.31"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text598">20</text>
+      <text
+         x="145.41"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text599">20</text>
+      <text
+         x="198.38"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text600">20</text>
+      <text
+         x="374.97"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text601">22</text>
+      <text
+         x="286.68"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text602">17</text>
+      <text
+         x="251.36"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text603">25</text>
+      <text
+         x="304.33"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text605">22</text>
+      <text
+         x="233.70"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text606">16</text>
+      <text
+         x="163.07"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text607">16</text>
+      <text
+         x="392.63"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text608">30</text>
+      <text
+         x="269.02"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text609">20</text>
+      <text
+         x="216.04"
+         y="210.74"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text612">19</text>
+      <text
+         x="374.97"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text613">34</text>
+      <text
+         x="233.70"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text615">16</text>
+      <text
+         x="216.04"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text616">17</text>
+      <text
+         x="339.65"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text617">19</text>
+      <text
+         x="286.68"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text618">15</text>
+      <text
+         x="251.36"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text619">21</text>
+      <text
+         x="321.99"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text621">16</text>
+      <text
+         x="180.73"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text622">17</text>
+      <text
+         x="163.07"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text623">15</text>
+      <text
+         x="304.33"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text624">20</text>
+      <text
+         x="198.38"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text626">20</text>
+      <text
+         x="357.31"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text628">21</text>
+      <text
+         x="269.02"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text629">17</text>
+      <text
+         x="145.41"
+         y="198.17"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text630">16</text>
+      <text
+         x="180.73"
+         y="72.40"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text635">20</text>
+      <text
+         x="163.07"
+         y="72.40"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text636">18</text>
+      <text
+         x="145.41"
+         y="72.40"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text640">17</text>
+      <text
+         x="198.38"
+         y="72.40"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text648">28</text>
+      <text
+         x="180.73"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text650">19</text>
+      <text
+         x="163.07"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text651">17</text>
+      <text
+         x="216.04"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text652">19</text>
+      <text
+         x="374.97"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text653">19</text>
+      <text
+         x="251.36"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text654">21</text>
+      <text
+         x="304.33"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text656">19</text>
+      <text
+         x="339.65"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text657">18</text>
+      <text
+         x="145.41"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text658">20</text>
+      <text
+         x="269.02"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text659">20</text>
+      <text
+         x="357.31"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text660">18</text>
+      <text
+         x="286.68"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text661">17</text>
+      <text
+         x="410.28"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text662">33</text>
+      <text
+         x="198.38"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text663">20</text>
+      <text
+         x="321.99"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text664">16</text>
+      <text
+         x="392.63"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text665">21</text>
+      <text
+         x="233.70"
+         y="223.32"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text666">17</text>
+      <text
+         x="163.07"
+         y="59.83"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text667">14</text>
+      <text
+         x="180.73"
+         y="59.83"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text673">24</text>
+      <text
+         x="145.41"
+         y="59.83"
+         text-anchor="middle"
+         style="font-size: 11.04px;fill: #FFFFFF; font-family: &quot;Arial&quot;;"
+         textLength="12.28px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text676">17</text>
+    </g>
+    <g
+       clip-path="none"
+       id="g734">
+      <text
+         x="129.88"
+         y="247.67"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="102.17px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text685">Mesoclemmys tuberculata</text>
+      <text
+         x="129.88"
+         y="235.10"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="82.64px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text686">Emydura subglobosa</text>
+      <text
+         x="129.88"
+         y="222.52"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="84.12px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text687">Podocnemis expansa</text>
+      <text
+         x="129.88"
+         y="209.95"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="75.81px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text688">Pelusios castaneus</text>
+      <text
+         x="129.88"
+         y="197.37"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="76.80px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text689">Pelodiscus sinensis</text>
+      <text
+         x="129.88"
+         y="184.79"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="90.94px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text690">Carettochelys insculpta</text>
+      <text
+         x="129.88"
+         y="172.22"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="78.70px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text691">Chelydra serpentina</text>
+      <text
+         x="129.88"
+         y="159.64"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="74.78px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text692">Dermatemys mawii</text>
+      <text
+         x="129.88"
+         y="147.06"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="63.08px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text693">Chelonia mydas</text>
+      <text
+         x="129.88"
+         y="134.49"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="87.03px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text694">Dermochelys coriacea</text>
+      <text
+         x="129.88"
+         y="121.91"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="88.50px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text695">Chelonoidis abingdonii</text>
+      <text
+         x="129.88"
+         y="109.33"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="74.81px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text696">Gopherus agassizii</text>
+      <text
+         x="129.88"
+         y="96.76"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="75.78px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text697">Cuora amboinensis</text>
+      <text
+         x="129.88"
+         y="84.18"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="57.19px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text698">Cuora mccordi</text>
+      <text
+         x="129.88"
+         y="71.60"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="111.47px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text699">Platysternon megacephalum</text>
+      <text
+         x="129.88"
+         y="59.03"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="79.84px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text700">Terrapene mexicana</text>
+      <text
+         x="129.88"
+         y="46.45"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="65.03px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text701">Chrysemys picta</text>
+      <text
+         x="129.88"
+         y="33.87"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="78.69px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text702">Malaclemys terrapin</text>
+      <text
+         transform="translate(149.86,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="78.69px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text703">Malaclemys terrapin</text>
+      <text
+         transform="translate(167.52,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="65.03px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text704">Chrysemys picta</text>
+      <text
+         transform="translate(185.18,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="79.84px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text705">Terrapene mexicana</text>
+      <text
+         transform="translate(202.84,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="111.47px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text706">Platysternon megacephalum</text>
+      <text
+         transform="translate(220.50,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="57.19px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text707">Cuora mccordi</text>
+      <text
+         transform="translate(238.16,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="75.78px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text708">Cuora amboinensis</text>
+      <text
+         transform="translate(255.81,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="74.81px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text709">Gopherus agassizii</text>
+      <text
+         transform="translate(273.47,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="88.50px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text710">Chelonoidis abingdonii</text>
+      <text
+         transform="translate(291.13,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="87.03px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text711">Dermochelys coriacea</text>
+      <text
+         transform="translate(308.79,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="63.08px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text712">Chelonia mydas</text>
+      <text
+         transform="translate(326.45,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="74.78px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text713">Dermatemys mawii</text>
+      <text
+         transform="translate(344.11,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="78.70px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text714">Chelydra serpentina</text>
+      <text
+         transform="translate(361.76,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="90.94px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text715">Carettochelys insculpta</text>
+      <text
+         transform="translate(379.42,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="76.80px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text716">Pelodiscus sinensis</text>
+      <text
+         transform="translate(397.08,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="75.81px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text717">Pelusios castaneus</text>
+      <text
+         transform="translate(414.74,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="84.12px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text718">Podocnemis expansa</text>
+      <text
+         transform="translate(432.40,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="82.64px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text719">Emydura subglobosa</text>
+      <text
+         transform="translate(450.06,261.46) rotate(-45)"
+         text-anchor="end"
+         style="font-size: 8.80px; font-style: italic;fill: #4D4D4D; font-family: &quot;Arial&quot;;"
+         textLength="102.17px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text720">Mesoclemmys tuberculata</text>
+      <text
+         x="295.51"
+         y="352.20"
+         text-anchor="middle"
+         style="font-size: 11.00px; font-family: &quot;Arial&quot;;"
+         textLength="39.16px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text721">Species</text>
+      <text
+         transform="translate(13.36,137.62) rotate(-90)"
+         text-anchor="middle"
+         style="font-size: 11.00px; font-family: &quot;Arial&quot;;"
+         textLength="39.16px"
+         lengthAdjust="spacingAndGlyphs"
+         id="text722">Species</text>
+      <g
+         id="g4"
+         transform="translate(20.135799,-2.2873077)">
+        <text
+           x="349.33157"
+           y="34.725609"
+           style="font-size:11px;font-family:Arial;text-align:center;text-anchor:middle"
+           lengthAdjust="spacingAndGlyphs"
+           id="text723"><tspan
+             sodipodi:role="line"
+             id="tspan1"
+             x="349.33157"
+             y="34.725609">Number of overlapping genes</tspan><tspan
+             sodipodi:role="line"
+             id="tspan2"
+             x="349.33157"
+             y="48.502331">with outlier values of <tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Italic'"
+   id="tspan4">d</tspan><tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan3">N</tspan></tspan></text>
+        <g
+           id="g5"
+           transform="translate(-13.231654,4.3272991)">
+          <image
+             width="17.280001"
+             height="86.400002"
+             x="354.13"
+             y="61.760002"
+             preserveAspectRatio="none"
+             xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAEsCAYAAAACUNnVAAAAd0lEQVQ4jbVTQQ7AIAhr/Ox+tvjL7rBMF8MGVbyhRVoK4qwHCwAUELgjtmgAXilfQD+OKcYLhjmYy7FH5BQHe4Oy+sC0VtTTBLitctAwszK9yvmUxgRTKEVjqYj8BSLr405/ci30ttYAYVom4HggfGeRl673z90FFVm6VaPkl1MAAAAASUVORK5CYII="
+             id="image723" />
+          <polyline
+             points="486.46,176.77 489.91,176.77 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline723"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="486.46,157.20 489.91,157.20 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline724"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="486.46,137.63 489.91,137.63 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline725"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="486.46,118.06 489.91,118.06 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline726"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="476.09,176.77 472.63,176.77 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline727"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="476.09,157.20 472.63,157.20 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline728"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="476.09,137.63 472.63,137.63 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline729"
+             transform="translate(-118.5,-40.5)" />
+          <polyline
+             points="476.09,118.06 472.63,118.06 "
+             style="stroke:#ffffff;stroke-width:0.38;stroke-linecap:butt"
+             id="polyline730"
+             transform="translate(-118.5,-40.5)" />
+          <text
+             x="495.39001"
+             y="179.92"
+             style="font-size:8.8px;font-family:Arial"
+             textLength="9.7799997"
+             lengthAdjust="spacingAndGlyphs"
+             id="text730"
+             transform="translate(-118.5,-40.5)">15</text>
+          <text
+             x="495.39001"
+             y="160.35001"
+             style="font-size:8.8px;font-family:Arial"
+             textLength="9.7799997"
+             lengthAdjust="spacingAndGlyphs"
+             id="text731"
+             transform="translate(-118.5,-40.5)">20</text>
+          <text
+             x="495.39001"
+             y="140.78"
+             style="font-size:8.8px;font-family:Arial"
+             textLength="9.7799997"
+             lengthAdjust="spacingAndGlyphs"
+             id="text732"
+             transform="translate(-118.5,-40.5)">25</text>
+          <text
+             x="495.39001"
+             y="121.21"
+             style="font-size:8.8px;font-family:Arial"
+             textLength="9.7799997"
+             lengthAdjust="spacingAndGlyphs"
+             id="text733"
+             transform="translate(-118.5,-40.5)">30</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
