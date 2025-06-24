@@ -15,8 +15,8 @@ pdf(file.path(output,'dnds_distances.pdf'),
     width = 8,
     height = 4)
 hist(df_allgenes$distance,
-     main = 'Mahalanobis distances',
-     xlab = 'Distances')
+     main = NULL,
+     xlab = 'Mahalanobis distance from multivariate distribution of pairwise comparisons across taxa')
 abline(v=threshold,col='red')
 dev.off()
 
