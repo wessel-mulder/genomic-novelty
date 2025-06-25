@@ -107,9 +107,10 @@ desired_order <-  c("Spliceosome","Basal transcription factors", "mRNA surveilla
 kegg_ref_genes_dnds@result$Description <- factor(kegg_ref_genes_dnds@result$Description,levels = desired_order)
 KEGG_enriched_pathways <- dotplot(kegg_ref_genes_dnds, 
         x = "GeneRatio", 
-        showCategory = length(desired_order)) + 
+        showCategory = length(desired_order),
+        color = "p.adjust") + 
   scale_y_discrete(limits = rev(desired_order)) +
-  scale_fill_gradientn(name = "Adjusted p-value", colours=c("#72315C", "#A6A867")) +
+  scale_color_gradientn(name = "Adjusted p-value", colors =c("#72315C", "#A6A867")) +
   #scale_size(name = "Gene count") +
   theme_minimal(base_family = "Arial") +
   labs(size="Gene count",
@@ -137,16 +138,17 @@ KEGG_enriched_pathways <- dotplot(kegg_ref_genes_dnds,
 
 ## TODO: Arial
 
-svglite('Results/KEGG_enriched_pathways.svg', width = 10, height = 4)
+svglite('Plots/3_kegg_analysis/KEGG_enriched_pathways.svg', width = 10, height = 4)
 print(KEGG_enriched_pathways)
 dev.off()
 
 KEGG_enriched_pathways
-ggsave("Results/KEGG_enriched_pathways.png", units = "in", height = 4, width = 6,
+ggsave("Plots/3_kegg_analysis/KEGG_enriched_pathways.png", units = "in", height = 4, width = 6,
        dpi = 700)
 
 #### write output enriched geneID
 kegg_ref_genes_dnds@result %>% filter(p.adjust < 0.05) %>% select(geneID) %>% write_csv("Results/geneid.csv")
+
 #### KEGG pathways 
 kegg_path_id <- rownames(kegg_ref_genes_dnds@result %>% filter(p.adjust < 0.05) %>% select(ID))
 
