@@ -5,7 +5,7 @@
    viewBox="0 0 864.00 540.00"
    version="1.1"
    id="svg738"
-   sodipodi:docname="heatmap_dnds_relative_adjusted.svg"
+   sodipodi:docname="FigureS6.svg"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    inkscape:export-filename="heatmap_dnds_relative_adjusted.pdf"
    inkscape:export-xdpi="100"
@@ -27,13 +27,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="0.53608392"
-     inkscape:cx="454.21993"
-     inkscape:cy="292.86459"
+     inkscape:zoom="1.6499216"
+     inkscape:cx="1129.1446"
+     inkscape:cy="245.46621"
      inkscape:window-width="1512"
      inkscape:window-height="859"
-     inkscape:window-x="1920"
-     inkscape:window-y="405"
+     inkscape:window-x="0"
+     inkscape:window-y="38"
      inkscape:window-maximized="1"
      inkscape:current-layer="g737"
      inkscape:export-bgcolor="#ffffffff" />
@@ -5362,7 +5362,7 @@
    style="font-size:65%;baseline-shift:sub"
    id="tspan9">S</tspan> (<tspan
    style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Italic'"
-   id="tspan10">ω</tspan>)</tspan></text>
+   id="tspan10">ω</tspan>))</tspan></text>
       <image
          width="17.28"
          height="86.40"
