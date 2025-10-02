@@ -153,8 +153,10 @@ binom.test(length(intersect(unique(gene_dnds$gene),
                             unique(outlier_genes_pc3_resid))), 
            length(gene_dnds$gene), p = 0.05, alternative='greater')
 
-pc1_length <- length(unique(outlier_genes_pc1_resid))
+# Fisher test
 mahalanobis_length <- length(unique(gene_dnds$gene))
+
+pc1_length <- length(unique(outlier_genes_pc1_resid))
 overlap_pc1_length <- length(intersect(unique(gene_dnds$gene),
                                        unique(outlier_genes_pc1_resid)))
 input_pc1 <- matrix(c(overlap_pc1_length, 
@@ -162,6 +164,25 @@ input_pc1 <- matrix(c(overlap_pc1_length,
                       mahalanobis_length - overlap_pc1_length, 
                       length(locus.trees) - pc1_length - mahalanobis_length + overlap_pc1_length), 
                     nrow = 2)
-input_pc1
 fisher.test(input_pc1, alternative = "greater")
+
+pc2_length <- length(unique(outlier_genes_pc2_resid))
+overlap_pc2_length <- length(intersect(unique(gene_dnds$gene),
+                                       unique(outlier_genes_pc2_resid)))
+input_pc2 <- matrix(c(overlap_pc2_length, 
+                      pc1_length - overlap_pc2_length, 
+                      mahalanobis_length - overlap_pc2_length, 
+                      length(locus.trees) - pc2_length - mahalanobis_length + overlap_pc2_length), 
+                    nrow = 2)
+fisher.test(input_pc2, alternative = "greater")
+
+pc3_length <- length(unique(outlier_genes_pc3_resid))
+overlap_pc3_length <- length(intersect(unique(gene_dnds$gene),
+                                       unique(outlier_genes_pc3_resid)))
+input_pc3 <- matrix(c(overlap_pc3_length, 
+                      pc1_length - overlap_pc3_length, 
+                      mahalanobis_length - overlap_pc3_length, 
+                      length(locus.trees) - pc3_length - mahalanobis_length + overlap_pc3_length), 
+                    nrow = 2)
+fisher.test(input_pc3, alternative = "greater")
 
