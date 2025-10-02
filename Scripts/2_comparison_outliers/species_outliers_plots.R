@@ -53,6 +53,7 @@ species_tree_plot$tip.label <- meta_turtles$Species[
   match(species_tree_plot$tip.label, meta_turtles$ID)]
 
 # plot for our tree
+library('ggtree')
 plot_tree <- ggtree::ggtree(species_tree_plot)
 plot_tree <- plot_tree +
   ggtree::geom_tiplab(size=3, offset=0.5, fontface = "italic") + 
@@ -365,6 +366,12 @@ species_richness$time <- round(species_richness$time * -1, digits = 4)
 data_plot <- merge(results, species_richness, 
                    by.x = "divergence_time", by.y = "time",
                    all.x = TRUE, all.y = TRUE)
+
+### GET CORRELATIONS 
+data_plot_sub <- data_plot[-1,c(1,3)]
+
+cor(data_plot_sub)
+cor_pmat(data_plot_sub)
 
 
 dotplot_internal_divtimes_overlaps <- ggplot(data_plot, 
