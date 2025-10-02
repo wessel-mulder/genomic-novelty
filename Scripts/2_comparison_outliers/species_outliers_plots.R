@@ -52,10 +52,22 @@ species_tree_plot <- drop.tip(species_tree_plot,
 species_tree_plot$tip.label <- meta_turtles$Species[
   match(species_tree_plot$tip.label, meta_turtles$ID)]
 
+metadata <- data.frame(taxa=meta_turtles$Species, Habitat=meta_turtles$Habitat_factor)
+colours_classes5 <- fish(n=5,option="Balistoides_conspicillum", end=0.95, 
+                         begin=0.3,direction=-1)
+colours_habitat <- colours_classes5[1:4]
+colour_marine <- colours_habitat[1]
+colour_aquatic <- colours_habitat[2]
+colour_aquatic_terrestrial <- colours_habitat[3]
+colour_terrestrial <- colours_habitat[4]
+
 # plot for our tree
 plot_tree <- ggtree::ggtree(species_tree_plot)
-plot_tree <- plot_tree +
-  ggtree::geom_tiplab(size=3, offset=0.5, fontface = "italic") + 
+plot_tree <- plot_tree %<+% metadata +
+  ggtree::geom_tiplab(size=3, offset=2, fontface = "italic") + 
+  ggtree::geom_tippoint(aes(color=Habitat)) + 
+  scale_color_manual("Primary lifestyle", values=colours_habitat,
+                     breaks = c("Marine", "Aquatic", "Aquatic_Terrestrial", "Terrestrial")) +
   theme_tree2() +
   coord_geo(xlim = c(-250, 100), ylim = c(-0.5, Ntip(species_tree_plot)+2),
             neg = TRUE, abbrv = list(FALSE), dat=list("periods"),
@@ -70,7 +82,7 @@ plot_tree <- plot_tree +
         text = element_text(family = "Arial"))
 revts(plot_tree)
 
-svglite('Plots/2_comparison_outliers/species_tree_branch_lengths.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/species_tree_branch_lengths_habitat.svg', width = 8, height = 5)
 revts(plot_tree)
 dev.off()
 
@@ -298,9 +310,9 @@ df_heatmap_raw <- merge(df_heatmap_raw, df_species_id, by.x="Var2", by.y="ID", a
 colnames(df_heatmap_raw) <- c("Var2", "Var1", "value", "Species1", "Species2")
 
 df_heatmap_raw$Species1 <- factor(df_heatmap_raw$Species1, 
-                                   levels=species_ordered_list)
+                                  levels=species_ordered_list)
 df_heatmap_raw$Species2 <- factor(df_heatmap_raw$Species2, 
-                                   levels=species_ordered_list[rev(1:length(species_ordered_list))])
+                                  levels=species_ordered_list[rev(1:length(species_ordered_list))])
 
 heatmap_raw <- ggplot(df_heatmap_raw, aes(x = Species1, y = Species2, fill = value)) +
   geom_tile() +
