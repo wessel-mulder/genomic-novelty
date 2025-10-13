@@ -67,6 +67,7 @@ threshold <- quantile(abs(pc1.resid), 0.95)
 outlier_indices <- which(abs(pc1.resid) > threshold)
 # Extract outlier matrices
 outlier_genes_pc1_resid <- names[outlier_indices]
+write.csv(outlier_genes_pc1_resid, 'Results/4_additional_plots/outliers_genes/pc1_resid_q95.csv', row.names = FALSE)
 
 # Calculate the quantile threshold (absolute for two-sided test)
 threshold <- quantile(abs(pc2.resid), 0.95)
@@ -74,6 +75,7 @@ threshold <- quantile(abs(pc2.resid), 0.95)
 outlier_indices <- which(abs(pc2.resid) > threshold)
 # Extract outlier matrices
 outlier_genes_pc2_resid <- names[outlier_indices]
+write.csv(outlier_genes_pc2_resid, 'Results/4_additional_plots/outliers_genes/pc2_resid_q95.csv', row.names = FALSE)
 
 # Calculate the quantile threshold (absolute for two-sided test)
 threshold <- quantile(abs(pc3.resid), 0.95)
@@ -81,6 +83,7 @@ threshold <- quantile(abs(pc3.resid), 0.95)
 outlier_indices <- which(abs(pc3.resid) > threshold)
 # Extract outlier matrices
 outlier_genes_pc3_resid <- names[outlier_indices]
+write.csv(outlier_genes_pc3_resid, 'Results/4_additional_plots/outliers_genes/pc3_resid_q95.csv', row.names = FALSE)
 
 gene_dnds <- read.csv('Results/1_mahalanobis_outliers/outliers_genes/dnds_q95.csv',
                       col.names = c('gene', 'p'))
