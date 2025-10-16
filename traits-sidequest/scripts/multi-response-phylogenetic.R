@@ -1,8 +1,18 @@
 # GETTING STARTED ---------------------------------------------------------
 # packages
+
+library(devtools)
+devtools::install_github("stan-dev/cmdstanr")
+devtools::install_github("rmcelreath/rethinking")
+
 pacman::p_load(tidyverse,brms,MCMCglmm,parallel,
                knitr,geiger,ape,phytools,caper,bayesplot,
-               ggtree,gridExtra,MCMCpack,dplyr)
+               ggtree,gridExtra,MCMCpack,dplyr,tidyr,vegan,
+               rethinking,cmdstanr)
+
+
+
+theme_set(theme_tidybayes() + panel_border())
 
 # tutorial functions file
 source("MR-PMM_tutorial_functions.R")
@@ -21,17 +31,29 @@ meta_turtles <- meta_turtles %>% filter(Microhabitat != "Outgroup")
 ### GET NUMBER OF DNDS OUTLIERS
 outliers_dnds_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/dnds_chi95.csv")[,-1]
 colnames(outliers_dnds_species) <- c("ID", "gene")
-# n_genes
-n_genes <- outliers_dnds_species %>% 
-  dplyr::select(ID, gene) %>%
-  group_by(ID) %>%
-  summarise(unique_outliers = n_distinct(gene), .groups = "drop")
-rm(outliers_dnds_species)
-# merge for species names 
-n_genes <- left_join(n_genes,
-                     meta_turtles[,colnames(meta_turtles) %in% c('ID','Species')],
-                     by='ID')
 
+# make matrix of genes
+mat <- outliers_dnds_species %>%
+  mutate(present = 1) %>%
+  pivot_wider(
+    names_from = gene,
+    values_from = present,
+    values_fill = 0
+  ) %>%
+  column_to_rownames("ID") %>%
+  as.matrix()
+head(mat,n=16)
+head(outliers_dnds_species,n=16)
+
+# jaccard distance
+dist_jaccard <- as.matrix(vegdist(mat, method = "jaccard"))
+dist_jaccard[dist_jaccard == 0] <- NA
+uniqueness <- rowMeans(dist_jaccard,na.rm=T)
+
+# merge with meta file 
+meta_turtles <- merge(meta_turtles,data.frame('ID' = names(uniqueness),
+                                        'Jaccard' = uniqueness),
+                by = 'ID')
 
 ### PREPARE PHYLOGONY
 species_tree_plot <- read.nexus("Data/2_comparison_outliers/bd.mcc.median_heights.tre")
@@ -154,98 +176,152 @@ colnames(df_ours) <- c('Species','Genus','Family','Order',
                        'Microhabitat',
                        'Lifespan','Neck_Retraction')
 
-df <- left_join(df_ours,n_genes[c('Species','unique_outliers')],by='Species')
+df <- left_join(df_ours,meta_turtles[c('Species','Jaccard')],by='Species')
 
-# construct formula
-# predictors <- c("Clutchsize")
-# fmla <- as.formula(paste("unique_outliers ~", paste(predictors, collapse = " + ")))
+# calculate jaccard index 
 
-df$Microhabitat <- as.factor(df$Microhabitat)
-df$Neck_Retraction <- as.factor(df$Neck_Retraction)
+# MULTI-RESPONSE  ---------------------------------------------------------
+df2 <- df
+df2 <- df2 %>%
+  mutate(
+    Microhabitat   = gsub("\\+","_", Microhabitat),   # replace + with _
+    Microhabitat   = gsub(" ", "", Microhabitat),     # remove spaces
+    Neck_Retraction = gsub("-", "_", Neck_Retraction) # replace dash with underscore
+  )
+
+# Microhabitat into binary dummies
+microhab_dummies <- model.matrix(~ Microhabitat - 1, data = df2)
+
+# Neck retraction into binary dummies
+neck_dummies <- model.matrix(~ Neck_Retraction - 1, data = df2)
+
+# Bind them back
+df2 <- cbind(df2, microhab_dummies, neck_dummies)
+
+#standardize 
+df2$Jaccard <- standardize(df2$Jaccard)
+df2$Mass <- standardize(df2$Mass)
+df2$Clutchsize <- standardize(df2$Clutchsize)
+df2$Clutch_frequency <- standardize(df2$Clutch_frequency)
+df2$Lifespan <- standardize(df2$Lifespan)
+
+head(df2)
+# add observation 
+df2$obs <- seq_len(nrow(df2))
+
+# Gaussian responses
+f1 <- brmsformula(Jaccard ~ (1|u|gr(Species, cov = C)) + (1|e|obs), sigma = 0.1) + gaussian()
+f2 <- brmsformula(Mass            ~ (1|u|gr(Species, cov = C)) + (1|e|obs), sigma = 0.1) + gaussian()
+f3 <- brmsformula(Clutchsize      ~ (1|u|gr(Species, cov = C)) + (1|e|obs), sigma = 0.1) + gaussian()
+f4 <- brmsformula(Clutch_frequency~ (1|u|gr(Species, cov = C)) + (1|e|obs), sigma = 0.1) + gaussian()
+f5 <- brmsformula(Lifespan        ~ (1|u|gr(Species, cov = C)) + (1|e|obs), sigma = 0.1) + gaussian()
+# Bernoulli responses
+# Microhabitat dummies
+f6  <- brmsformula(MicrohabitatAquatic        ~ (1|u|gr(Species, cov = C)) + (1|e|obs)) + bernoulli()
+f7 <- brmsformula(MicrohabitatAquatic_Marine ~ (1|u|gr(Species, cov = C)) + (1|e|obs)) + bernoulli()
+f8 <- brmsformula(MicrohabitatMarine         ~ (1|u|gr(Species, cov = C)) + (1|e|obs)) + bernoulli()
+f9  <- brmsformula(MicrohabitatTerrestrial    ~ (1|u|gr(Species, cov = C)) + (1|e|obs)) + bernoulli()
+# Neck retraction dummies
+f10 <- brmsformula(Neck_RetractionHidden_necked ~ (1|u|gr(Species, cov = C)) + (1|e|obs)) + bernoulli()
+f11   <- brmsformula(Neck_RetractionSide_necked   ~ (1|u|gr(Species, cov = C)) + (1|e|obs)) + bernoulli()
+# Combine all into one mvbrmsformula
+b.2.f <- f1 + f2 + f3 + f4 + f5 + f6 + f7 + f8 + f9 + f10 + f11
 
 # test brm
-b.1 <- brm(unique_outliers ~ Mass + Clutchsize + Clutch_frequency + Lifespan + Microhabitat + Neck_Retraction + (1|gr(Species, cov = C)), 
-           data   = df,
-           family = gaussian(), 
+b.2 <- brm(b.2.f + set_rescor(F),
+           data   = df2,
            data2  = list(C = C),
            cores  = 4, 
            chains = 4,
-           iter = 100000,
-           thin = 10
-           
+           iter = 10000,
+           thin = 5
 )
 
-saveRDS(b.1,
-        file='traits-sidequest/results/mod1.rds')
-plot(b.1)   
-b.1
+summary(b.2)
+colnames(as_tibble(b.2))
 
-# Get posterior summary of all parameters
-library(dplyr)
-library(tibble)
-library(ggplot2)
-
-# Extract posterior summary
-param_df <- posterior_summary(b.1) %>%
+param_df <- posterior_summary(b.2) %>%
   as_tibble(rownames = "parameter") %>%
   dplyr::select(parameter, Estimate, lower = Q2.5, upper = Q97.5)
 
-desired_order <- c(
-#  "b_Intercept",                 # Intercept first
-  "b_Lifespan",                  # Life history
-  "b_Clutchsize",
-  "b_Clutch_frequency",
-  "b_Mass",                      # Mass
-  "b_Neck_RetractionSideMnecked", # Neck retraction
-  "b_MicrohabitatAquaticPMarine", # Microhabitat
-  "b_MicrohabitatMarine",
-  "b_MicrohabitatTerrestrial",
-  "sd_Species__Intercept",       # Phylogenetic SD
-  "sigma"                        # Residual SD
-)
+# keep correlation parameters with "uniqueoutliers"
+sel <- grepl("^(cor|rescor).*Jaccard", param_df$parameter)
+outliers_corr <- param_df[sel, ]
 
-param_df <- param_df %>%
-  filter(parameter %in% desired_order)
+outliers_corrs <- outliers_corr %>%
+  # make nice groups 
+  mutate(Trait = case_when( 
+    grepl("Mass|NeckRetraction", parameter) ~ "Morphology",
+    grepl("Clutchsize|Clutchfrequency|Lifespan", parameter) ~ "Life-history",
+    grepl("Microhabitat", parameter) ~ "Habitat",
+    TRUE ~ "Other"  # fallback if needed
+  )) %>%
+  # make phylo / resid correlations
+  mutate(
+    Correlation = case_when(
+      str_starts(parameter, "cor_obs__") ~ "Residual",
+      str_starts(parameter, "cor_Species__") ~ "Phylogenetic",
+      TRUE ~ NA_character_  # just in case there are other parameters
+    )
+  ) %>%
+  #  make nice names 
+  mutate(unique_param = paste0(
+    "Jaccard + ",
+    str_extract(parameter, "(?<=Intercept__)[A-Za-z0-9]+")
+  )) %>%
+  mutate(unique_param = str_remove_all(unique_param, "Microhabitat|NeckRetraction")) %>%
+  mutate(unique_param = unique_param %>%
+           # Add dashes for known multi-word cases
+           str_replace_all("Clutchfrequency", "Clutch-frequency") %>%
+           str_replace_all("AquaticMarine", "Aquatic-Marine") %>%
+           str_replace_all("Hiddennecked", "Hidden-necked") %>%
+           str_replace_all("Sidenecked", "Side-necked")
+  ) 
 
-param_df <- param_df %>%
-  mutate(parameter = factor(parameter, levels = rev(desired_order))) 
 
-param_df <- param_df %>%
-  mutate(group = case_when(
-    grepl("^b_Intercept", parameter) ~ "Intercept",
-    grepl("^b_Micro", parameter) ~ "Microhabitat",
-    grepl("^b_Neck", parameter) ~ "Neck-retraction mechanism",
-    grepl("^b_Mass", parameter) ~ "Morphology",
-    grepl("^b_Clu|Lif", parameter) ~ "Life-history",
-    grepl("^(sd_)", parameter) ~ "Random effects",
-    grepl("^(sigma)", parameter) ~ "Random effects",
-    TRUE ~ "Other"
-  ))
-param_df <- param_df %>%
-  mutate(group = factor(group, levels = c('Life-history',
-                                              'Morphology',
-                                          'Neck-retraction mechanism',
-                                              'Microhabitat',
-                                              'Random effects')))
+# Reorder parameter by col
 
-labels <- c('Lifespan','Clutchsize','Clutch frequency',
-            'Mass','Side-necked',
-            'Aquatic + Marine','Marine','Terrestrial',
-            'Phylogenetic','Residual')
+outliers_corrs <- outliers_corrs %>%
+  mutate(Trait = factor(Trait, 
+                      levels = c('Morphology','Life-history','Habitat'))) %>%
+  mutate(Correlation = factor(Correlation, 
+                        levels = c('Phylogenetic','Residual'))) %>%
+  mutate(unique_param = factor(unique_param,
+                               levels = unique(unique_param[order(Trait)])))
 
-ggplot(param_df, aes(x = parameter, y = Estimate,
+# and plot
+p<-ggplot(outliers_corrs, aes(x = fct_rev(unique_param), y = Estimate,
                      ymin = lower, ymax = upper,
-                     color = group)) +
+                     color = Trait,linetype = Correlation,
+                     shape = Correlation)) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey50") +  # line at 0
-  geom_pointrange(size = 0.8) +
+  geom_pointrange(size = 0.5, 
+                  position = position_dodge(width = -0.6)) +  # <-- dodge corr_type
   coord_flip() +  # horizontal layout
-  theme_minimal(base_size = 14) +
-  scale_x_discrete(labels=rev(labels)) +
-  labs(x = "Parameter",
+  theme_minimal(base_size = 16) +
+  labs(x = NULL,
        y = "Posterior median ± 95% CI",
-       color = NULL,
-       title = "Posterior Estimates of Model Parameters")+
-  theme(legend.position = c(0.8,0.8),
+       title = "Posterior estimates of trait correlations")+
+  scale_color_manual(values = c(
+    "Morphology" = "#d95f02",       # greenish
+    "Life-history" = "#7570b3",     # orange
+    "Habitat" = "#1b9e77"           # purple
+  )) +
+  theme(#legend.position = c(1,1),
         legend.box.background = element_rect(fill='white',
-                                             linewidth = 0.5))
+                                             linewidth = 0.1))
+print(p)
+
+pdf(file = 'traits-sidequest/figs/posterior-estimates-traits.pdf',
+    width = 10,
+    height = 10)
+print(p)
+dev.off()
+
+write.csv(df2,
+          file = 'traits-sidequest/data/subset-traits.csv')
+
+saveRDS(b.2,
+        file = 'traits-sidequest/results/jacard-mod.rds')
+
 
