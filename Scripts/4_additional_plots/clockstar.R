@@ -7,7 +7,7 @@ library(ggvenn)
 setwd('/Users/jule/Desktop/genomic-novelty/')
 
 # load data
-data <- read_tsv('Data/2_comparison_outliers/metadata_habitat_reptraits.tsv')
+data <- read_tsv('Data/2_comparison_outliers/metadata_habitat.tsv')
 
 # remove old evolutionary rates
 data <- data %>% dplyr::select(!contains(c("evolutionary")))

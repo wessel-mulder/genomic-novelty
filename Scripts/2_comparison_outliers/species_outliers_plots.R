@@ -13,15 +13,6 @@ loadfonts(device = "pdf")
 
 setwd("/Users/jule/Desktop/genomic-novelty/")
 
-colours_classes <- fish(n=1,option="Balistoides_conspicillum", end=0.9, 
-                        begin=0.9)
-colours_classes[2] <- fish(n=1,option="Balistoides_conspicillum", end=0.8, 
-                           begin=0.8)
-colours_classes[3] <- fish(n=1,option="Balistoides_conspicillum", end=0.4, 
-                           begin=0.4)
-colours_classes[4] <- fish(n=1,option="Balistoides_conspicillum", end=0.2, 
-                           begin=0.2)
-
 gene_names <- readLines("Results/0_preprocessing/list_final.txt")
 
 outliers_dn_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/dn_chi95.csv")
@@ -33,12 +24,11 @@ colnames(outliers_dnds_species) <- c("n", "species", "gene")
 outliers_raw_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/raw_chi95.csv")
 colnames(outliers_raw_species) <- c("n", "species", "gene")
 
-meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat_reptraits.tsv")
-meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
-                                      levels=c("Marine", "Aquatic", 
-                                               "Aquatic_Terrestrial", "Terrestrial", 
-                                               "Outgroup"))
+meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat.tsv")
 meta_turtles <- meta_turtles %>% filter(Microhabitat != "Outgroup")
+meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
+                                      levels=c("Marine", "Aquatic_Marine", 
+                                               "Aquatic", "Terrestrial"))
 
 
 #########################
@@ -53,13 +43,17 @@ species_tree_plot$tip.label <- meta_turtles$Species[
   match(species_tree_plot$tip.label, meta_turtles$ID)]
 
 metadata <- data.frame(taxa=meta_turtles$Species, Habitat=meta_turtles$Habitat_factor)
-colours_classes5 <- fish(n=5,option="Balistoides_conspicillum", end=0.95, 
-                         begin=0.3,direction=-1)
-colours_habitat <- colours_classes5[1:4]
-colour_marine <- colours_habitat[1]
-colour_aquatic <- colours_habitat[2]
-colour_aquatic_terrestrial <- colours_habitat[3]
-colour_terrestrial <- colours_habitat[4]
+
+colour_marine <- fish(n=1,option="Balistoides_conspicillum", end=0.98, 
+                      begin=0.98)
+colour_aquatic_marine <- fish(n=1,option="Balistoides_conspicillum", end=0.91, 
+                              begin=0.91)
+colour_aquatic <- fish(n=1,option="Balistoides_conspicillum", end=0.77, 
+                       begin=0.77)
+colour_terrestrial <- fish(n=1,option="Balistoides_conspicillum", end=0.45, 
+                           begin=0.45)
+
+colours_habitat <- c(colour_marine, colour_aquatic_marine, colour_aquatic, colour_terrestrial)
 
 # plot for our tree
 library('ggtree')
@@ -68,7 +62,7 @@ plot_tree <- plot_tree %<+% metadata +
   ggtree::geom_tiplab(size=3, offset=2, fontface = "italic") + 
   ggtree::geom_tippoint(aes(color=Habitat)) + 
   scale_color_manual("Primary lifestyle", values=colours_habitat,
-                     breaks = c("Marine", "Aquatic", "Aquatic_Terrestrial", "Terrestrial")) +
+                     breaks = c("Marine", "Aquatic_Marine", "Aquatic", "Terrestrial")) +
   theme_tree2() +
   coord_geo(xlim = c(-250, 100), ylim = c(-0.5, Ntip(species_tree_plot)+2),
             neg = TRUE, abbrv = list(FALSE), dat=list("periods"),

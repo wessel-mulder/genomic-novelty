@@ -42,10 +42,10 @@ colnames(outliers_dnds_species) <- c("n", "species", "gene")
 outliers_raw_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/raw_chi95.csv")
 colnames(outliers_raw_species) <- c("n", "species", "gene")
 
-meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat_reptraits.tsv")
+meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat.tsv")
 meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
-                                      levels=c("Marine", "Aquatic", 
-                                               "Aquatic_Terrestrial", "Terrestrial", 
+                                      levels=c("Marine", "Aquatic_Marine", 
+                                               "Aquatic", "Terrestrial", 
                                                "Outgroup"))
 meta_turtles <- meta_turtles %>% filter(Microhabitat != "Outgroup")
 
