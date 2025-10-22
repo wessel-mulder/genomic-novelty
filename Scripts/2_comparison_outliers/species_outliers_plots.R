@@ -7,6 +7,7 @@ library(deeptime)
 library(phangorn)
 library(svglite)
 library(extrafont)
+library(vegan)
 # import arial (only needed once)
 # font_import(pattern = "Arial", prompt = FALSE)
 loadfonts(device = "pdf")
@@ -400,4 +401,49 @@ dotplot_internal_divtimes_overlaps <- ggplot(data_plot,
 svglite('Plots/2_comparison_outliers/dotplot_internal_divtimes_overlaps.svg', width = 8, height = 5)
 print(dotplot_internal_divtimes_overlaps)
 dev.off()
+
+# Heatmap jaccard index
+mat <- outliers_dnds_species %>%
+  mutate(present = 1) %>%
+  pivot_wider(
+    names_from = gene,
+    values_from = present,
+    values_fill = 0
+  ) %>%
+  column_to_rownames("ID") %>%
+  as.matrix()
+head(mat,n=16)
+head(outliers_dnds_species,n=16)
+
+# jaccard distance
+dist_jaccard <- as.matrix(vegdist(mat, method = "jaccard"))
+dist_jaccard[dist_jaccard == 0] <- NA
+uniqueness <- rowMeans(dist_jaccard,na.rm=T)
+
+# merge with meta file 
+meta_turtles <- merge(meta_turtles,data.frame('ID' = names(uniqueness),
+                                              'Jaccard' = uniqueness),
+                      by = 'ID')
+
+meta_turtles$Species <- factor(meta_turtles$Species, 
+                                   levels=species_ordered_list)
+meta_turtles$Jaccard_round <- round(meta_turtles$Jaccard, digits=2)
+heatmap_jaccard <- ggplot(meta_turtles, aes(x = 1, y = Species, fill = Jaccard)) +
+  geom_tile() +
+  geom_text(aes(label=Jaccard_round), color = "white") +
+  labs(
+       x = "",
+       y = "") +
+  scale_fill_gradientn(name = "Jaccard", colours=c("#145C85FF", "#A1B621FF")) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(face = 'italic')) +
+  theme(axis.text.x = element_blank()) +
+  theme(text = element_text(family = "Arial"))
+
+heatmap_jaccard
+
+svglite('Plots/2_comparison_outliers/heatmap_jaccard.svg', width = 3.5, height = 5)
+print(heatmap_jaccard)
+dev.off()
+
 
