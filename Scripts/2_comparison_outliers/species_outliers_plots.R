@@ -8,6 +8,7 @@ library(phangorn)
 library(svglite)
 library(extrafont)
 library(vegan)
+library(rstatix)
 # import arial (only needed once)
 # font_import(pattern = "Arial", prompt = FALSE)
 loadfonts(device = "pdf")
@@ -376,10 +377,9 @@ data_plot <- merge(results, species_richness,
 
 ### GET CORRELATIONS 
 data_plot_sub <- data_plot[-1,c(1,3)]
-
-cor(data_plot_sub)
-cor_pmat(data_plot_sub)
-
+corrs <- cor_test(data_plot_sub)
+corrs$cor #-0.84
+corrs$p #2.71e-05
 
 dotplot_internal_divtimes_overlaps <- ggplot(data_plot, 
                                              aes(x=divergence_time, y=num_overlapping_genes)) +
@@ -396,13 +396,23 @@ dotplot_internal_divtimes_overlaps <- ggplot(data_plot,
         panel.grid.minor.x = element_blank()) +
   labs(title = "Internal nodes",
        x = "Divergence time") +
+  annotate('text',
+           x = 220,
+           y =14,
+           label=paste0('r = ',corrs$cor),
+           size = 8)+
+  annotate('text',
+           x = 212.5,
+           y=13,
+           label=paste0('p-value = ',corrs$p),
+           size = 5)+
   theme(text = element_text(family = "Arial"))
 
 svglite('Plots/2_comparison_outliers/dotplot_internal_divtimes_overlaps.svg', width = 8, height = 5)
 print(dotplot_internal_divtimes_overlaps)
 dev.off()
 
-# Heatmap jaccard index
+ # Heatmap jaccard index
 mat <- outliers_dnds_species %>%
   mutate(present = 1) %>%
   pivot_wider(
