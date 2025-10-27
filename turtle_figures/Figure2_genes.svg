@@ -27,9 +27,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.4561979"
-     inkscape:cx="669.2085"
-     inkscape:cy="725.86289"
+     inkscape:zoom="1.0975067"
+     inkscape:cx="782.22759"
+     inkscape:cy="762.63773"
      inkscape:window-width="1512"
      inkscape:window-height="859"
      inkscape:window-x="1920"
@@ -2007,7 +2007,7 @@
          sodipodi:nodetypes="ccc"
          inkscape:label="arrow" /><path
          style="fill:#808080;fill-opacity:1;stroke:#808080;stroke-width:0.499695;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-1-6-4);paint-order:stroke fill markers"
-         d="M 259.88844,208.17672 288.43976,188.5312 Z"
+         d="m 258.41635,209.62363 29.95162,-24.11547 z"
          id="path17-8-3-1"
          sodipodi:nodetypes="ccc"
          inkscape:label="arrow" /><g
@@ -2101,7 +2101,7 @@
          id="g30"
          inkscape:label="Virus"
          style="stroke-width:0.99939;stroke-dasharray:none"
-         transform="translate(9.6867637,-2.8553263)"><circle
+         transform="translate(10.431201,-2.8553263)"><circle
            style="fill:#17638d;fill-opacity:1;stroke:none;stroke-width:0.367483;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
            id="path28"
            cx="318.69452"
@@ -2824,7 +2824,7 @@
            x="217.02597"
            y="218.78922">pre-mRNA</tspan></text><g
          id="g20-9"
-         transform="translate(299.43836,-9.3483118)"
+         transform="translate(299.43836,-11.581623)"
          style="stroke-width:0.99939;stroke-dasharray:none"
          inkscape:label="Transcription factors"><rect
            style="opacity:1;fill:#fcef0f;fill-opacity:1;stroke:none;stroke-width:1.77792;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
@@ -2907,7 +2907,7 @@
                y="345.70386"
                id="tspan15">1</tspan></text></g></g><g
          id="g17-9"
-         transform="matrix(1.3284647,0,0,1.0625852,97.326836,-17.659441)"
+         transform="matrix(1.3284647,0,0,1.0625852,97.326836,-19.892752)"
          style="stroke-width:0.99939;stroke-dasharray:none"
          inkscape:label="DNA"><path
            style="fill:#93a7ac;fill-opacity:1;stroke:none;stroke-width:0.99939;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
@@ -3023,7 +3023,7 @@
          style="fill:#fcef0f;fill-opacity:1;stroke:none;stroke-width:1.00835;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="path3-5-8"
          cx="291.94171"
-         cy="185.46751"
+         cy="183.23422"
          inkscape:label="Polymerase"
          r="2.8136199" /><g
          id="g18-3"
@@ -3114,8 +3114,8 @@
            id="tspan20">PPP2R5E, SAP18</tspan></text><ellipse
          style="fill:#4694b8;fill-opacity:1;stroke:none;stroke-width:0.93812;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="path3-7-4-4-4-0-7-9"
-         cx="60.544971"
-         cy="314.67804"
+         cx="62.096401"
+         cy="313.0722"
          rx="2.8303816"
          ry="2.7967579"
          inkscape:label="Polycomb repressive complex"
