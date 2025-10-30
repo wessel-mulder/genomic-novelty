@@ -10,12 +10,11 @@ loadfonts(device = "pdf")
 setwd("/Users/jule/Desktop/genomic-novelty/")
 
 # get data on used species
-meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat_reptraits.tsv")
-meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
-                                      levels=c("Marine", "Aquatic", 
-                                               "Aquatic_Terrestrial", "Terrestrial", 
-                                               "Outgroup"))
+meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat.tsv")
 meta_turtles <- meta_turtles %>% filter(Microhabitat != "Outgroup")
+meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
+                                      levels=c("Marine", "Aquatic_Marine", 
+                                               "Aquatic", "Terrestrial"))
 
 # load species tree with branch lengths from Thomson et al. (2021)
 species_tree_plot <- read.nexus("Data/2_comparison_outliers/bd.mcc.median_heights.tre")

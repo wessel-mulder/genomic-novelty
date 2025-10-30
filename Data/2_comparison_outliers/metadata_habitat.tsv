@@ -1,0 +1,22 @@
+Species	ID	Microhabitat	suborder	family
+Podocnemis expansa	podExp	Aquatic	Pleurodira	Podocnemididae
+Pelusios castaneus	pelCas	Aquatic	Pleurodira	Podocnemididae
+Mesoclemmys tuberculata	mesTub	Aquatic	Pleurodira	Chelidae
+Emydura subglobosa	emySub	Aquatic	Pleurodira	Chelidae
+Dermatemys mawii	derMaw	Aquatic	Cryptodira	Dermatemydidae
+Chelydra serpentina	cheSer	Aquatic	Cryptodira	Chelydridae
+Dermochelys coriacea	derCor	Marine	Cryptodira	Dermochelyidae
+Chelonia mydas	cheMyd	Marine	Cryptodira	Cheloniidae
+Platysternon megacephalum	plaMeg	Aquatic	Cryptodira 	Platysternidae
+Terrapene mexicana	terMex	Terrestrial	Cryptodira	Emydidae
+Malaclemys terrapin	malTer	Aquatic_Marine	Cryptodira	Emydidae
+Chrysemys picta	chrPic	Aquatic	Cryptodira	Emydidae
+Cuora mccordi	cuoMcc	Aquatic	Cryptodira	Geoemydidae
+Cuora amboinensis	cuoAmb	Aquatic	Cryptodira	Geoemydidae
+Gopherus agassizii	gopAga	Terrestrial	Cryptodira	Testudinidae
+Chelonoidis abingdonii	cheAbi	Terrestrial	Cryptodira	Testudinidae
+Pelodiscus sinensis	pelSin	Aquatic	Cryptodira	Trionychidae
+Carettochelys insculpta	carIns	Aquatic_Marine	Cryptodira	Carettochelyidae
+Homo sapiens	homSap	Outgroup	Haplorrhini	Homininae
+Gallus gallus	galGal	Outgroup	Galloanserae	Phasianinae
+Alligator mississipiensis	allMis	Outgroup	Crocodylia	Alligatoridae

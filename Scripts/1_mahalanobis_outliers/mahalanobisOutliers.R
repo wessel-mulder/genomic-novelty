@@ -142,6 +142,9 @@ dN_impute <- impMean_matrices(dN_checked)
 dS_impute <- impMean_matrices(dS_checked)
 pure_impute <- impMean_matrices(pure_checked)
 
+# save dNdS matrix for use in clockstaRX
+saveRDS(dNdS_impute, file = file.path(output,'dNdS_impute.rds'))
+
 dNdS_impute[['121468at32523']]
 dN_impute[['121468at32523']]
 dS_impute[['121468at32523']]

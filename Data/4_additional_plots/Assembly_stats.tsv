@@ -12,7 +12,7 @@ Terrapene mexicana	terMex	2.60	24.20	Scaffold	76614	24249581	52260	0.81
 Malaclemys terrapin	malTer	2.40	0.44	Contig	437266			0.86
 Chrysemys picta	chrPic	2.40	16.00	Scaffold				0.93
 Cuora mccordi	cuoMcc	2.40	32.60	Scaffold	74338	32628679	100020	0.89
-Cuora amboinensis	cuoAmb	2.10	0.25	Scaffold	47152	247606	89628	NA
+Cuora amboinensis	cuoAmb	2.10	0.25	Scaffold	47152	247606	89628	0.77
 Gopherus agassizii	gopAga	2.20	0.23	Scaffold	43735	228109	172559	0.87
 Chelonoidis abingdonii	cheAbi	2.30	1.30	Scaffold	73186	1277207	10618	0.91
 Pelodiscus sinensis	pelSin	2.20	3.40	Scaffold	21993	3350749	19903	0.87

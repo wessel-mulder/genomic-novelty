@@ -7,20 +7,13 @@ library(deeptime)
 library(phangorn)
 library(svglite)
 library(extrafont)
+library(vegan)
+library(rstatix)
 # import arial (only needed once)
 # font_import(pattern = "Arial", prompt = FALSE)
 loadfonts(device = "pdf")
 
 setwd("/Users/jule/Desktop/genomic-novelty/")
-
-colours_classes <- fish(n=1,option="Balistoides_conspicillum", end=0.9, 
-                        begin=0.9)
-colours_classes[2] <- fish(n=1,option="Balistoides_conspicillum", end=0.8, 
-                           begin=0.8)
-colours_classes[3] <- fish(n=1,option="Balistoides_conspicillum", end=0.4, 
-                           begin=0.4)
-colours_classes[4] <- fish(n=1,option="Balistoides_conspicillum", end=0.2, 
-                           begin=0.2)
 
 gene_names <- readLines("Results/0_preprocessing/list_final.txt")
 
@@ -33,12 +26,11 @@ colnames(outliers_dnds_species) <- c("n", "species", "gene")
 outliers_raw_species <- read.csv("Results/1_mahalanobis_outliers/outliers_species/raw_chi95.csv")
 colnames(outliers_raw_species) <- c("n", "species", "gene")
 
-meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat_reptraits.tsv")
-meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
-                                      levels=c("Marine", "Aquatic", 
-                                               "Aquatic_Terrestrial", "Terrestrial", 
-                                               "Outgroup"))
+meta_turtles <- read_tsv("Data/2_comparison_outliers/metadata_habitat.tsv")
 meta_turtles <- meta_turtles %>% filter(Microhabitat != "Outgroup")
+meta_turtles$Habitat_factor <- factor(meta_turtles$Microhabitat, 
+                                      levels=c("Marine", "Aquatic_Marine", 
+                                               "Aquatic", "Terrestrial"))
 
 
 #########################
@@ -52,10 +44,27 @@ species_tree_plot <- drop.tip(species_tree_plot,
 species_tree_plot$tip.label <- meta_turtles$Species[
   match(species_tree_plot$tip.label, meta_turtles$ID)]
 
+metadata <- data.frame(taxa=meta_turtles$Species, Habitat=meta_turtles$Habitat_factor)
+
+colour_marine <- fish(n=1,option="Balistoides_conspicillum", end=0.98, 
+                      begin=0.98)
+colour_aquatic_marine <- fish(n=1,option="Balistoides_conspicillum", end=0.91, 
+                              begin=0.91)
+colour_aquatic <- fish(n=1,option="Balistoides_conspicillum", end=0.77, 
+                       begin=0.77)
+colour_terrestrial <- fish(n=1,option="Balistoides_conspicillum", end=0.45, 
+                           begin=0.45)
+
+colours_habitat <- c(colour_marine, colour_aquatic_marine, colour_aquatic, colour_terrestrial)
+
 # plot for our tree
+library('ggtree')
 plot_tree <- ggtree::ggtree(species_tree_plot)
-plot_tree <- plot_tree +
-  ggtree::geom_tiplab(size=3, offset=0.5, fontface = "italic") + 
+plot_tree <- plot_tree %<+% metadata +
+  ggtree::geom_tiplab(size=3, offset=2, fontface = "italic") + 
+  ggtree::geom_tippoint(aes(color=Habitat)) + 
+  scale_color_manual("Primary lifestyle", values=colours_habitat,
+                     breaks = c("Marine", "Aquatic_Marine", "Aquatic", "Terrestrial")) +
   theme_tree2() +
   coord_geo(xlim = c(-250, 100), ylim = c(-0.5, Ntip(species_tree_plot)+2),
             neg = TRUE, abbrv = list(FALSE), dat=list("periods"),
@@ -70,7 +79,7 @@ plot_tree <- plot_tree +
         text = element_text(family = "Arial"))
 revts(plot_tree)
 
-svglite('Plots/2_comparison_outliers/species_tree_branch_lengths.svg', width = 8, height = 5)
+svglite('Plots/2_comparison_outliers/species_tree_branch_lengths_habitat.svg', width = 8, height = 5)
 revts(plot_tree)
 dev.off()
 
@@ -298,9 +307,9 @@ df_heatmap_raw <- merge(df_heatmap_raw, df_species_id, by.x="Var2", by.y="ID", a
 colnames(df_heatmap_raw) <- c("Var2", "Var1", "value", "Species1", "Species2")
 
 df_heatmap_raw$Species1 <- factor(df_heatmap_raw$Species1, 
-                                   levels=species_ordered_list)
+                                  levels=species_ordered_list)
 df_heatmap_raw$Species2 <- factor(df_heatmap_raw$Species2, 
-                                   levels=species_ordered_list[rev(1:length(species_ordered_list))])
+                                  levels=species_ordered_list[rev(1:length(species_ordered_list))])
 
 heatmap_raw <- ggplot(df_heatmap_raw, aes(x = Species1, y = Species2, fill = value)) +
   geom_tile() +
@@ -366,25 +375,88 @@ data_plot <- merge(results, species_richness,
                    by.x = "divergence_time", by.y = "time",
                    all.x = TRUE, all.y = TRUE)
 
+### GET CORRELATIONS 
+data_plot_sub <- data_plot[-1,c(1,3)]
+corrs <- cor_test(data_plot_sub)
+corrs$cor #-0.84
+corrs$p #2.71e-05
 
 dotplot_internal_divtimes_overlaps <- ggplot(data_plot, 
                                              aes(x=divergence_time, y=num_overlapping_genes)) +
   geom_step(aes(x=divergence_time, y=N), color="grey") +
   geom_point(color="#72315C") +
   scale_y_continuous(
-    name = "Number of outlier genes present in all associated tips",
-    sec.axis = sec_axis(~ . , name = "Species Richness")
+    name = "Species Richness",
+    sec.axis = sec_axis(~ . , name = "Outlier genes present in all descendant taxa")
   ) +
   theme_minimal() +
   scale_x_reverse(breaks = seq(0, 240, 20), labels = abs(seq(0, 240, 20)),
                   limits = c(240, 0)) +
   theme(panel.grid.major   = element_line(color="grey80", size=.2),
         panel.grid.minor.x = element_blank()) +
-  labs(title = "Internal nodes",
-       x = "Divergence time") +
+  labs(x = "Divergence time") +
+  annotate('text',
+           x = 220,
+           y =14,
+           label=paste0('r = ',corrs$cor),
+           size = 8)+
+  annotate('text',
+           x = 212.5,
+           y=13,
+           label=paste0('p-value = ',corrs$p),
+           size = 5)+
   theme(text = element_text(family = "Arial"))
 
 svglite('Plots/2_comparison_outliers/dotplot_internal_divtimes_overlaps.svg', width = 8, height = 5)
 print(dotplot_internal_divtimes_overlaps)
 dev.off()
+
+
+#############################
+### Heatmap jaccard index ###
+#############################
+
+mat <- outliers_dnds_species %>%
+  mutate(present = 1) %>%
+  pivot_wider(
+    names_from = gene,
+    values_from = present,
+    values_fill = 0
+  ) %>%
+  column_to_rownames("ID") %>%
+  as.matrix()
+head(mat,n=16)
+head(outliers_dnds_species,n=16)
+
+# jaccard distance
+dist_jaccard <- as.matrix(vegdist(mat, method = "jaccard"))
+dist_jaccard[dist_jaccard == 0] <- NA
+uniqueness <- rowMeans(dist_jaccard,na.rm=T)
+
+# merge with meta file 
+meta_turtles <- merge(meta_turtles,data.frame('ID' = names(uniqueness),
+                                              'Jaccard' = uniqueness),
+                      by = 'ID')
+
+meta_turtles$Species <- factor(meta_turtles$Species, 
+                                   levels=species_ordered_list)
+meta_turtles$Jaccard_round <- round(meta_turtles$Jaccard, digits=2)
+heatmap_jaccard <- ggplot(meta_turtles, aes(x = 1, y = Species, fill = Jaccard)) +
+  geom_tile() +
+  geom_text(aes(label=Jaccard_round), color = "white") +
+  labs(
+       x = "",
+       y = "") +
+  scale_fill_gradientn(name = "Jaccard", colours=c("#145C85FF", "#A1B621FF")) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(face = 'italic')) +
+  theme(axis.text.x = element_blank()) +
+  theme(text = element_text(family = "Arial"))
+
+heatmap_jaccard
+
+svglite('Plots/2_comparison_outliers/heatmap_jaccard.svg', width = 3.5, height = 5)
+print(heatmap_jaccard)
+dev.off()
+
 
