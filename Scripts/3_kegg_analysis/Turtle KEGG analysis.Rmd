@@ -6,14 +6,16 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "/Users/hsf378/PhD/Analysis/genomic-novelty")
 knitr::opts_chunk$set(echo = TRUE)
 library(clusterProfiler)
-library("KEGGREST")
 library(tidyverse)
 library(stringr)
 library(ggplot2)
-library("pathview")
+library(pathview)
 library(svglite)
+library(KEGGREST)
+library(cowplot)
 ```
 
 ## Load the kegg db
@@ -23,6 +25,30 @@ cmy_kegg_df <- data.frame(cmy_id = names(keggConv("ncbi-geneid", "cmy")),
           ncbi_id = keggConv("ncbi-geneid", "cmy")) %>% 
   separate(.,ncbi_id, into = c("info", "ncbi_gid"), sep = ":") %>% 
   select(-info) 
+kegg_list <- list()
+for (i in c("pss","ciz","cmy","ccay","dcc","cpic","tst","cabi","mrv")){
+  i.kegg_df <- data.frame(id = names(keggConv("ncbi-geneid", i)),
+          ncbi_id = keggConv("ncbi-geneid", i)) %>% 
+  separate(.,ncbi_id, into = c("info", "ncbi_gid"), sep = ":") %>% 
+  select(-info) 
+  kegg_list[[i]] <- i.kegg_df
+}
+
+turtle_species <- c("pss","ciz","cmy","ccay","dcc","cpic","tst","cabi","mrv") 
+
+all_kegg_links <- list()
+
+for (sp in turtle_species) {
+  message("Processing ", sp, "...")
+  links <- keggLink("pathway", sp)  # returns gene → pathway mapping
+  df <- data.frame(
+    gene = gsub("^.*:", "", names(links)),
+    pathway = gsub("^.*:", "", as.character(links))
+  )
+  all_kegg_links[[sp]] <- df
+}
+all_kegg_links[["mrv"]] %>% filter(gene == "120368533")
+links
 ```
 
 ## Load background gene_list
@@ -42,38 +68,115 @@ genes <- left_join(gene_input,gene_list, by = "gene") %>%
 ## KEGG enrichment
 
 ### load outiler genes
+#### pair outiler genes to green sea turtle NCBI Gene IDs 
 ```{r}
-# 254 genes
+### cmy as background
+# 255 genes
 outliers_dn <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dn_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
-# 255 genes, converted 248 genes. 
+# write_tsv(outliers_dn,"~/Downloads/trutle_project_outliers_dn.tsv")
+
+# 255 genes, converted 248 genes , missing 108898at32523, 112465at32523, 168156at32523, 259072at32523, 283327at32523, 290126at32523, 291010at32523, while 48547at32523 has duplicate ncbi gene IDs. 
 outliers_ds <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/ds_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
-# 255 genes, converted 252 genes.
+# write_tsv(outliers_ds,"~/Downloads/trutle_project_outliers_ds.tsv")
+
+# 255 genes, converted 252 genes, missing 283327at32523, 290126at32523, 291010at32523, while 48547at32523 has duplicate ncbi gene IDs.
 outliers_dnds <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dnds_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
+# write_tsv(outliers_dnds,"~/Downloads/trutle_project_outliers_dnds.tsv")
 
-# 255 genes, converted 254 genes.
+# 255 genes, converted 254 genes, missing 291010at32523, while 48547at32523 has duplicate ncbi gene IDs.
 outliers_pure <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/raw_q95.csv", col.names = c("busco_id","pval")) %>% 
   left_join(.,genes, by = "busco_id") %>% 
   filter(!is.na(cmy_id )) %>% 
   select(ncbi_gid,cmy_id)
+# write_tsv(outliers_pure,"~/Downloads/trutle_project_outliers_pure.tsv")
 
+### Residual PC1, 255 genes, convert 251 genes, missing 108898at32523, 259072at32523,283327at32523,290126at32523
+res_pc1 <- read.table(file = "Results/4_additional_plots/outliers_genes/pc1_resid_q95.csv", header = T) %>% 
+  as.tibble(.) %>% 
+  left_join(.,genes, by = c("x" = "busco_id")) %>% 
+  filter(!is.na(cmy_id))%>% 
+  select(ncbi_gid,cmy_id)
+
+### Residual PC2, 255 genes, convert 250 genes, missing 108898at32523, 259072at32523, 277695at32523, 283327at32523, 290126at32523
+res_pc2 <- read.table(file = "Results/4_additional_plots/outliers_genes/pc2_resid_q95.csv", header = T) %>% 
+  as.tibble(.) %>% 
+  left_join(.,genes, by = c("x" = "busco_id")) %>% 
+  filter(!is.na(cmy_id)) %>% 
+  select(ncbi_gid,cmy_id)
+
+### Residual PC3, 255 genes, convert 251 genes, missing 108898at32523, 259072at32523, 283327at32523, 290126at32523
+res_pc3 <- read.table(file = "Results/4_additional_plots/outliers_genes/pc3_resid_q95.csv", header = T) %>% 
+  as.tibble(.) %>% 
+  left_join(.,genes, by = c("x" = "busco_id")) %>% 
+  filter(!is.na(cmy_id)) %>% 
+  select(ncbi_gid,cmy_id)
+```
+#### pair outiler genes to Chinese soft-shelled turtle NCBI Gene IDs 
+```{r}
+pss_genes <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/pss_5031_merged.tsv", 
+                      col_names = c("gene","busco_id","ncbi_gid")) %>% 
+  mutate(pss_id = paste("pss",ncbi_gid,sep = ":"))
+### pss as background
+# 255 genes, converted 250 genes, missing 3576at32523, 30310at32523, 280970at32523, 246490at32523, 235309at32523.
+outliers_dn_pss <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dn_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,pss_genes, by = "busco_id") %>% 
+  arrange(desc(busco_id)) %>% 
+  filter(!is.na(pss_id )) %>% 
+  select(ncbi_gid,pss_id)
+# write_tsv(outliers_dn,"~/Downloads/trutle_project_outliers_dn.tsv")
+
+# 255 genes, converted 237 genes. 
+outliers_ds_pss <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/ds_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,pss_genes, by = "busco_id") %>% 
+  arrange(desc(busco_id)) %>% 
+  filter(!is.na(pss_id )) %>% 
+  select(ncbi_gid,pss_id)
+# write_tsv(outliers_ds,"~/Downloads/trutle_project_outliers_ds.tsv")
+
+# 255 genes, converted 249 genes
+outliers_dnds_pss <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dnds_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,pss_genes, by = "busco_id") %>% 
+  arrange(desc(busco_id)) %>% 
+  filter(!is.na(pss_id )) %>% 
+  select(ncbi_gid,pss_id)
+
+# write_tsv(outliers_dnds,"~/Downloads/trutle_project_outliers_dnds.tsv")
+
+# 255 genes, converted 248 genes
+outliers_pure_pss <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/raw_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,pss_genes, by = "busco_id") %>% 
+  arrange(desc(busco_id)) %>% 
+  filter(!is.na(pss_id )) %>% 
+  select(ncbi_gid,pss_id)
+# write_tsv(outliers_pure,"~/Downloads/trutle_project_outliers_pure.tsv")
 ```
 
-### enrich kegg function
+### enrich kegg function for different background
 ```{r}
 enrich_ref_kegg <- function(df){
   out_df <- enrichKEGG(gene = unique(df$ncbi_gid),
          pAdjustMethod = "fdr",
-         organism = "cmy")
+         organism = "cmy",
+         pvalueCutoff = 0.05)
   out_df@result$Description <- sub(" - Chelonia mydas \\(green sea turtle\\)", "", out_df@result$Description)
+  return(out_df)
+}
+
+enrich_pss_kegg <- function(df){
+  out_df <- enrichKEGG(gene = unique(df$ncbi_gid),
+         pAdjustMethod = "fdr",
+         organism = "pss",
+         pvalueCutoff = 0.05)
+  out_df@result$Description <- sub(" - Pelodiscus sinensis \\(Chinese soft-shelled turtle\\)", "", out_df@result$Description)
   return(out_df)
 }
 ```
@@ -81,24 +184,30 @@ enrich_ref_kegg <- function(df){
 ### KEGG analysis
 #### dN results
 ```{r}
-kegg_ref_genes_dn <- enrich_ref_kegg(outliers_dn) ## 9 enriched terms
-
+kegg_cmy_genes_dn <- enrich_ref_kegg(outliers_dn) ## 9 enriched terms
+kegg_pss_genes_dn <- enrich_pss_kegg(outliers_dn_pss) ## 9 enriched terms
 # Number of enriched terms
 nrow(as.data.frame(kegg_ref_genes_dn))
+nrow(as.data.frame(kegg_pss_genes_dn))
+as.data.frame(kegg_pss_genes_dn)
+as.data.frame(kegg_ref_genes_dn)
 ```
 #### dS results
 ```{r}
-kegg_ref_genes_ds <- enrich_ref_kegg(outliers_ds)
-
+kegg_ref_genes_ds <- enrich_ref_kegg(outliers_ds) #0
+kegg_pss_genes_ds <- enrich_pss_kegg(outliers_ds_pss) #0
 # Number of enriched terms
 nrow(as.data.frame(kegg_ref_genes_ds))
 ```
 #### dN/dS results
 ```{r}
 kegg_ref_genes_dnds <- enrich_ref_kegg(outliers_dnds) #8 enriched terms
-
+kegg_pss_genes_dnds <- enrich_pss_kegg(outliers_dnds_pss) #8 enriched terms
 # Number of enriched terms
 nrow(as.data.frame(kegg_ref_genes_dnds))
+nrow(as.data.frame(kegg_pss_genes_dnds))
+
+
 ```
 
 #### visualize the pathway and highligh the outlier genes in red for dn/ds results
@@ -159,8 +268,245 @@ for (i in kegg_path_id) {
          species = "cmy")
 }
 ```
+#### visualize the pathway and highligh the outlier genes in red for dn/ds results using PSS as the background geneset
+```{r}
+kegg_pss_genes_dnds@result$Description <- factor(kegg_pss_genes_dnds@result$Description,levels = desired_order)
+KEGG_enriched_pathways_pss <- dotplot(kegg_pss_genes_dnds, 
+        x = "GeneRatio", 
+        showCategory = length(desired_order),
+        color = "p.adjust") + 
+  scale_y_discrete(limits = rev(desired_order)) +
+  scale_color_gradientn(name = "Adjusted p-value", colors =c("#72315C", "#A6A867")) +
+  #scale_size(name = "Gene count") +
+  theme_minimal(base_family = "Arial") +
+  labs(size="Gene count",
+       x="Gene ratio") +
+  theme(
+    
+    # base text (will cascade to anything not explicitly set below)
+    text = element_text(
+      family = "Arial", 
+      color  = "black",
+      size   = 14
+    ),
+    
+    # axis titles and axis tick labels
+    axis.title  = element_text(color = "black"),
+    axis.text   = element_text(color = "black"),
+    
+    # legend title and labels
+    legend.title = element_text(color = "black"),
+    legend.text  = element_text(color = "black"),
+    
+    # strip text (for facets, if any)
+    strip.text   = element_text(color = "black")
+  )
+svglite('Plots/3_kegg_analysis/KEGG_enriched_pathways_pss.svg', width = 10, height = 4)
+print(KEGG_enriched_pathways_pss)
+dev.off()
+```
 
 #### pairwise distance results
 ```{r}
 kegg_ref_genes_pure <- enrich_ref_kegg(outliers_pure) # 3
+kegg_pss_genes_pure <- enrich_pss_kegg(outliers_pure_pss) # 3
 ```
+
+#### Residual PCs results
+```{r}
+kegg_cmy_res_pc1 <- enrich_ref_kegg(res_pc1) #0
+kegg_cmy_res_pc2 <- enrich_ref_kegg(res_pc2) #0
+kegg_cmy_res_pc3 <- enrich_ref_kegg(res_pc3) #0
+```
+
+
+### multiple species KEGG enrichment
+
+```{r}
+
+# all KO pathways
+pws <- keggList("pathway", "ko")          
+# pathway→KO
+links <- keggLink("ko", "pathway")       
+# convert to dataframe
+TERM2GENE <- data.frame(
+  term = sub("path:", "", names(links)),
+  gene = sub("ko:", "", links),
+  stringsAsFactors = FALSE
+) %>% filter(str_detect(term,"ko"))
+
+TERM2NAME <- data.frame(
+  term = sub("path:", "", names(pws)),
+  name = as.vector(pws),
+  stringsAsFactors = FALSE
+)
+```
+##### KOs overlap between cmy and pss
+```{r}
+# 11339
+length(unique(keggLink("ko", "cmy")))
+# 10630
+length(unique(keggLink("ko", "pss")))
+# 10467
+length(intersect(unique(keggLink("ko", "cmy")), unique(keggLink("ko", "pss"))))
+```
+
+## KofamKOALA result
+
+```{r}
+cpb_kegg <- read_tsv("Data/3_kegg_analysis/KOfamKOALA/Kofamscan results - 8478_all.tsv") ### 11171 unique KOs
+### unique KOs
+length(unique(cpb_kegg$KO))
+
+tmt_kegg <- read_tsv("Data/3_kegg_analysis/KOfamKOALA/Kofamscan results - 1415176_all.tsv") ### 10471 unique KOs
+### unique KOs
+length(unique(tmt_kegg$KO))
+
+cmy_kegg_kofamkoala <- read_tsv("Data/3_kegg_analysis/KOfamKOALA/Kofamscan results - 8469_all.tsv") ### 10514
+### unique KOs
+length(unique(cmy_kegg_kofamkoala$KO))
+
+pss_kegg_kofamkoala <- read_tsv("Data/3_kegg_analysis/KOfamKOALA/Kofamscan results - 13735_all.tsv") ### 10089 KOs
+### unique KOs
+length(unique(pss_kegg_kofamkoala$KO))
+
+#### KEGG database
+
+cmy_kegg_r <- data.frame(KOfull=unique(keggLink("ko", "cmy"))) %>% 
+  separate(.,KOfull, into=c("ko","KO"),sep=":") 
+pss_kegg_r <- data.frame(KOfull=unique(keggLink("ko", "pss"))) %>% 
+  separate(.,KOfull, into=c("ko","KO"),sep=":")
+
+```
+
+### Overlap between KofamKOALA result and KEGG database
+```{r}
+length(intersect(cmy_kegg_r$KO,cmy_kegg_kofamkoala$KO)) ### 10278
+length(intersect(pss_kegg_r$KO,pss_kegg_kofamkoala$KO)) ### 9829
+```
+
+### Pool background KOs
+```{r}
+# union from KOfamKOALA results
+pool_bg <- bind_rows(cpb_kegg,tmt_kegg, cmy_kegg_kofamkoala,pss_kegg_kofamkoala) %>%
+  select(gene_name,KO)
+## unique KOs
+length(unique(pool_bg$KO)) ### 11,419 
+
+# intersection
+length(intersect(intersect(intersect(cpb_kegg$KO,tmt_kegg$KO),cmy_kegg_kofamkoala$KO),pss_kegg_kofamkoala$KO)) ## 9,140
+
+# union from mixed KOfamKOALA and KEGG annotated
+pool_bg_mix <- bind_rows(cpb_kegg %>% select(KO),
+                         tmt_kegg %>% select(KO), 
+                         cmy_kegg_r %>% select(KO),
+                         pss_kegg_r %>% select(KO)) %>% 
+  distinct(.) ### 11,770
+
+```
+
+## forward KOs
+### load paired Busco gene and Ortho gene per species
+```{r}
+cpb_pairs <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/8478_0.candidate_og2gene.txt", 
+                      col_names = c("busco_id","gene"))
+tmt_pairs <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/1415176_0.candidate_og2gene.txt", 
+                      col_names = c("busco_id","gene"))
+cmy_pairs <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/8469_0.candidate_og2gene.txt", 
+                      col_names = c("busco_id","gene"))
+pss_pairs <- read_tsv("Data/3_kegg_analysis/KEGG og2geneid/13735_0.candidate_og2gene.txt", 
+                      col_names = c("busco_id","gene"))
+busco_pairs <- bind_rows(cpb_pairs,tmt_pairs,cmy_pairs,pss_pairs)
+```
+### pair outlier busco gene to species gene as forward gene set
+```{r}
+# 255 genes, converted 255 genes
+outliers_dn_pairs <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dn_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,busco_pairs, by = "busco_id") %>% 
+  left_join(.,pool_bg, by = c("gene" = "gene_name"))
+
+
+# 255 genes, converted 254 genes , missing 259072at32523. 
+outliers_ds_pairs <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/ds_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,busco_pairs, by = "busco_id") %>% 
+  left_join(.,pool_bg, by = c("gene" = "gene_name"))
+
+
+# 255 genes, converted 255 genes
+outliers_dnds_pairs <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/dnds_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,busco_pairs, by = "busco_id") %>% 
+  left_join(.,pool_bg, by = c("gene" = "gene_name"))
+
+
+
+# 255 genes, converted 255 genes
+outliers_pure_pairs <- read.csv("Results/1_mahalanobis_outliers/outliers_genes/raw_q95.csv", col.names = c("busco_id","pval")) %>% 
+  left_join(.,busco_pairs, by = "busco_id")  %>% 
+  left_join(.,pool_bg, by = c("gene" = "gene_name"))
+
+
+```
+
+#### KEGG enrichment by multiple species as background
+```{r}
+dnds_kegg <- enricher(
+  gene          = outliers_dnds_pairs %>% filter(!is.na(KO)) %>% pull(KO) %>% unique(),
+  universe      = pool_bg %>% pull(KO) %>% unique(),
+  TERM2GENE     = TERM2GENE,
+  TERM2NAME     = TERM2NAME,
+  pAdjustMethod = "fdr",
+  pvalueCutoff = 0.05
+)
+as_data_frame(dnds_kegg)
+
+```
+```{r}
+desired_order_poolbg <-  c("Spliceosome","Basal transcription factors", "mRNA surveillance pathway", "Proteasome", "RNA degradation", "Polycomb repressive complex","Viral life cycle - HIV-1","Cell cycle","Amyotrophic lateral sclerosis","Huntington disease","Spinocerebellar ataxia")
+dnds_kegg@result$Description <- factor(dnds_kegg@result$Description,levels = desired_order_poolbg)
+dnds_kegg_poolbg <- dotplot(dnds_kegg %>% filter(!is.na(Description)), 
+        x = "GeneRatio", 
+        showCategory = length(desired_order_poolbg),
+        color = "p.adjust") + 
+  scale_y_discrete(limits = rev(desired_order_poolbg)) +
+  scale_color_gradientn(name = "Adjusted p-value", colors =c("#72315C", "#A6A867")) +
+  #scale_size(name = "Gene count") +
+  theme_minimal(base_family = "Arial") +
+  labs(size="Gene count",
+       x="Gene ratio") +
+  theme(
+    
+    # base text (will cascade to anything not explicitly set below)
+    text = element_text(
+      family = "Arial", 
+      color  = "black",
+      size   = 14
+    ),
+    
+    # axis titles and axis tick labels
+    axis.title  = element_text(color = "black"),
+    axis.text   = element_text(color = "black"),
+    
+    # legend title and labels
+    legend.title = element_text(color = "black"),
+    legend.text  = element_text(color = "black"),
+    
+    # strip text (for facets, if any)
+    strip.text   = element_text(color = "black")
+  )
+combined_plot <- plot_grid(
+  KEGG_enriched_pathways_pss,
+  dnds_kegg_poolbg,
+  nrow = 2,
+  labels = c("A", "B")
+)
+svglite::svglite("Plots/3_kegg_analysis/KEGG_enriched_pathways_supplementFig11.svg",
+                 width = 10, height = 8)
+# gridExtra::grid.arrange(KEGG_enriched_pathways_pss,
+#                         dnds_kegg_poolbg,
+#                         nrow = 2)
+print(combined_plot)
+dev.off()
+
+
+```
+
