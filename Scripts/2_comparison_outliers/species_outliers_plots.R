@@ -386,16 +386,15 @@ dotplot_internal_divtimes_overlaps <- ggplot(data_plot,
   geom_step(aes(x=divergence_time, y=N), color="grey") +
   geom_point(color="#72315C") +
   scale_y_continuous(
-    name = "Number of outlier genes present in all associated tips",
-    sec.axis = sec_axis(~ . , name = "Species Richness")
+    name = "Species Richness",
+    sec.axis = sec_axis(~ . , name = "Outlier genes present in all descendant taxa")
   ) +
   theme_minimal() +
   scale_x_reverse(breaks = seq(0, 240, 20), labels = abs(seq(0, 240, 20)),
                   limits = c(240, 0)) +
   theme(panel.grid.major   = element_line(color="grey80", size=.2),
         panel.grid.minor.x = element_blank()) +
-  labs(title = "Internal nodes",
-       x = "Divergence time") +
+  labs(x = "Divergence time") +
   annotate('text',
            x = 220,
            y =14,
@@ -412,7 +411,11 @@ svglite('Plots/2_comparison_outliers/dotplot_internal_divtimes_overlaps.svg', wi
 print(dotplot_internal_divtimes_overlaps)
 dev.off()
 
- # Heatmap jaccard index
+
+#############################
+### Heatmap jaccard index ###
+#############################
+
 mat <- outliers_dnds_species %>%
   mutate(present = 1) %>%
   pivot_wider(

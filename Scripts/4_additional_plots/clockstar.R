@@ -9,9 +9,6 @@ setwd('/Users/jule/Desktop/genomic-novelty/')
 # load data
 data <- read_tsv('Data/2_comparison_outliers/metadata_habitat.tsv')
 
-# remove old evolutionary rates
-data <- data %>% dplyr::select(!contains(c("evolutionary")))
-
 # load species tree
 species.tree <- read.nexus('Data/2_comparison_outliers/bd.mcc.median_heights.tre')
 species.tree <- drop.tip(species.tree, 
@@ -20,7 +17,7 @@ species.tree <- drop.tip(species.tree,
 # load dn_ds matrices
 dNdS_impute <- readRDS('Results/1_mahalanobis_outliers/dNdS_impute.rds')
 
-# load UCE/gene trees
+# create locus trees with species tree topology and branch length defined by dNdS
 locus.trees <- list()
 for (i in seq_along(dNdS_impute)) {
   locus.tree <- nnls.tree(dm = dNdS_impute[[i]], tree = species.tree)
@@ -37,10 +34,12 @@ locus.trees <- locus.trees[Ntip(locus.trees) > 2]
 ### SKIP !!! ###
 ################
 
+# run clockstaRX
 analysis <- diagnose.clocks(loctrs = locus.trees, 
                             sptr = species.tree, 
                             pdf.file = 'Results/4_additional_plots/clockstarx')
 
+# save results to be able to load later
 saveRDS(analysis, file = 'Results/4_additional_plots/clockstar_analysis.rds')
 
 
@@ -48,12 +47,10 @@ saveRDS(analysis, file = 'Results/4_additional_plots/clockstar_analysis.rds')
 ### HERE !!! ###
 ################
 
+# load results
 analysis <- readRDS("Results/4_additional_plots/clockstar_analysis.rds")
-analysis$pca.best.k
-# 1
 
-
-# Extract PC1 for two Euclidean spaces
+# Extract residual PC1, PC2, PC3
 pc1.resid <- analysis$weighted.pca.clock.space$empPCA$x[,1]
 pc2.resid <- analysis$weighted.pca.clock.space$empPCA$x[,2]
 pc3.resid <- analysis$weighted.pca.clock.space$empPCA$x[,3]
@@ -143,20 +140,7 @@ dev.off()
 
 ## Statistical tests
 
-
-binom.test(length(intersect(unique(gene_dnds$gene),
-                            unique(outlier_genes_pc1_resid))), 
-           length(gene_dnds$gene), p = 0.05, alternative='greater')
-
-binom.test(length(intersect(unique(gene_dnds$gene),
-                            unique(outlier_genes_pc2_resid))), 
-           length(gene_dnds$gene), p = 0.05, alternative='greater')
-
-binom.test(length(intersect(unique(gene_dnds$gene),
-                            unique(outlier_genes_pc3_resid))), 
-           length(gene_dnds$gene), p = 0.05, alternative='greater')
-
-# Fisher test
+# Fisher's exact test
 mahalanobis_length <- length(unique(gene_dnds$gene))
 
 pc1_length <- length(unique(outlier_genes_pc1_resid))
